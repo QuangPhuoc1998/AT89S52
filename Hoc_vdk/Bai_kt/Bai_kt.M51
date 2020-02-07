@@ -1,0 +1,112 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/30/2018  22:04:07  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Bai_kt.obj TO Bai_kt RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Bai_kt.obj (BAI_KT)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Bai_kt (BAI_KT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?BAI_KT
+            DATA    000EH     0006H     UNIT         _DATA_GROUP_
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     007AH     UNIT         ?PR?_HIEN_S?BAI_KT
+            CODE    007DH     0050H     UNIT         ?PR?MAIN?BAI_KT
+            CODE    00CDH     0030H     UNIT         ?PR?_HIEN_C?BAI_KT
+            CODE    00FDH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Bai_kt (BAI_KT)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?BAI_KT
+
+?PR?MAIN?BAI_KT                -----    -----
+  +--> ?PR?_HIEN_S?BAI_KT
+  +--> ?PR?_HIEN_C?BAI_KT
+
+?PR?_HIEN_S?BAI_KT             000EH    0006H
+
+?PR?_HIEN_C?BAI_KT             000EH    0002H
+
+
+
+SYMBOL TABLE OF MODULE:  Bai_kt (BAI_KT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BAI_KT
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/30/2018  22:04:07  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  B:00A0H.0       PUBLIC        BTN1
+  B:00A0H.1       PUBLIC        BTN2
+  B:00A0H.2       PUBLIC        BTN3
+  C:007DH         PUBLIC        main
+  D:0008H         PUBLIC        a
+  D:000AH         PUBLIC        b
+  D:000CH         PUBLIC        c
+  B:0080H.0       PUBLIC        led1
+  B:0080H.1       PUBLIC        led2
+  C:00CDH         PUBLIC        _hien_c
+  C:0003H         PUBLIC        _hien_s
+  -------         PROC          MAIN
+  C:007DH         LINE#         6
+  C:007DH         LINE#         7
+  C:007DH         LINE#         8
+  C:007DH         LINE#         9
+  C:007DH         LINE#         10
+  C:008DH         LINE#         11
+  C:009DH         LINE#         12
+  C:00ADH         LINE#         13
+  C:00BCH         LINE#         14
+  C:00CBH         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         PROC          _HIEN_C
+  D:000EH         SYMBOL        a
+  D:0004H         SYMBOL        b
+  D:0002H         SYMBOL        c
+  C:00CDH         LINE#         17
+  C:00D1H         LINE#         18
+  C:00D1H         LINE#         19
+  C:00FCH         LINE#         20
+  -------         ENDPROC       _HIEN_C
+  -------         PROC          _HIEN_S
+  D:000EH         SYMBOL        a
+  D:0010H         SYMBOL        b
+  D:0012H         SYMBOL        c
+  C:0003H         LINE#         21
+  C:000FH         LINE#         22
+  C:000FH         LINE#         23
+  C:007CH         LINE#         24
+  -------         ENDPROC       _HIEN_S
+  -------         ENDMOD        BAI_KT
+
+Program Size: data=21.0 xdata=0 code=265
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

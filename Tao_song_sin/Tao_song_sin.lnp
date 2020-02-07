@@ -1,0 +1,4 @@
+"Tao_song_sin.obj",
+".\delay.obj" 
+TO "Tao_song_sin" 
+RAMSIZE(256) 

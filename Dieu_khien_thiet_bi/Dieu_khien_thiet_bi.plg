@@ -1,0 +1,18 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\DATA\AT89S52\Dieu_khien_thiet_bi\Dieu_khien_thiet_bi.uvproj
+Project File Date:  07/21/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling LCD4.c...
+LCD4.c(43): message C320: "Lcd - Use delay method."
+compiling main.c...
+compiling UartMode1.c...
+linking...
+Program Size: data=13.0 xdata=0 const=0 code=860
+creating hex file from "Dieu_khien_thiet_bi"...
+"Dieu_khien_thiet_bi" - 0 Error(s), 0 Warning(s).

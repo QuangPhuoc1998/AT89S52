@@ -1,0 +1,4 @@
+"kich_no_tu_dien.obj",
+".\delay.obj" 
+TO "kich_no_tu_dien" 
+RAMSIZE(256) 

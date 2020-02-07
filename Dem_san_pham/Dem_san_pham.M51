@@ -1,0 +1,185 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/03/2019  09:26:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Dem_san_pham.obj, .\delay.obj TO Dem_san_pham RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Dem_san_pham.obj (DEM_SAN_PHAM)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?SIDIV)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  Dem_san_pham (DEM_SAN_PHAM)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?DEM_SAN_PHAM
+            DATA    000EH     0002H     UNIT         _DATA_GROUP_
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     008BH     UNIT         ?C?LIB_CODE
+            CODE    0091H     0066H     UNIT         ?PR?MAIN?DEM_SAN_PHAM
+            CODE    00F7H     005CH     UNIT         ?PR?_TIME_ON?DEM_SAN_PHAM
+            CODE    0153H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0173H     001BH     UNIT         ?PR?NGAT?DEM_SAN_PHAM
+            CODE    018EH     000CH     UNIT         ?C_C51STARTUP
+            CODE    019AH     000AH     UNIT         ?CO?DEM_SAN_PHAM
+
+
+
+OVERLAY MAP OF MODULE:   Dem_san_pham (DEM_SAN_PHAM)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?DEM_SAN_PHAM
+
+?PR?MAIN?DEM_SAN_PHAM             -----    -----
+  +--> ?PR?_TIME_ON?DEM_SAN_PHAM
+  +--> ?PR?_DELAY?DELAY
+
+?PR?_TIME_ON?DEM_SAN_PHAM         000EH    0002H
+  +--> ?CO?DEM_SAN_PHAM
+  +--> ?PR?_DELAY?DELAY
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/03/2019  09:26:17  PAGE 2
+
+
+
+SYMBOL TABLE OF MODULE:  Dem_san_pham (DEM_SAN_PHAM)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DEM_SAN_PHAM
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  B:00A0H.2       PUBLIC        P2_2
+  B:00A0H.3       PUBLIC        P2_3
+  C:019AH         PUBLIC        code7seg
+  C:0091H         PUBLIC        main
+  C:0173H         PUBLIC        ngat
+  D:0008H         PUBLIC        dem
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  D:000AH         PUBLIC        i
+  C:00F7H         PUBLIC        _time_on
+  D:000CH         PUBLIC        t
+  B:00A0H.0       PUBLIC        L1
+  B:00A0H.1       PUBLIC        L2
+  -------         PROC          MAIN
+  -------         DO            
+  C:00ADH         SYMBOL        here
+  -------         ENDDO         
+  C:0091H         LINE#         8
+  C:0091H         LINE#         9
+  C:0091H         LINE#         10
+  C:0093H         LINE#         11
+  C:0095H         LINE#         12
+  C:0097H         LINE#         13
+  C:0097H         LINE#         14
+  C:0097H         LINE#         15
+  C:0097H         LINE#         16
+  C:0097H         LINE#         17
+  C:009EH         LINE#         18
+  C:00A1H         LINE#         19
+  C:00A1H         LINE#         20
+  C:00ADH         LINE#         21
+  C:00ADH         LINE#         22
+  C:00ADH         LINE#         23
+  C:00ADH         LINE#         24
+  C:00ADH         LINE#         25
+  C:00ADH         LINE#         26
+  C:00ADH         LINE#         27
+  C:00BEH         LINE#         28
+  C:00BEH         LINE#         29
+  C:00C3H         LINE#         30
+  C:00C3H         LINE#         31
+  C:00CAH         LINE#         32
+  C:00DBH         LINE#         33
+  C:00E5H         LINE#         34
+  C:00E7H         LINE#         35
+  C:00EEH         LINE#         36
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/03/2019  09:26:17  PAGE 3
+
+
+  C:00F0H         LINE#         37
+  C:00F5H         LINE#         38
+  -------         ENDPROC       MAIN
+  -------         PROC          _TIME_ON
+  D:0002H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        donvi
+  D:000EH         SYMBOL        chuc
+  -------         ENDDO         
+  C:00F7H         LINE#         42
+  C:00FBH         LINE#         43
+  C:00FBH         LINE#         45
+  C:0113H         LINE#         46
+  C:011EH         LINE#         48
+  C:012CH         LINE#         49
+  C:012EH         LINE#         50
+  C:0135H         LINE#         51
+  C:0137H         LINE#         52
+  C:0147H         LINE#         53
+  C:0149H         LINE#         54
+  C:0150H         LINE#         55
+  C:0152H         LINE#         56
+  -------         ENDPROC       _TIME_ON
+  -------         PROC          NGAT
+  C:0173H         LINE#         57
+  C:0175H         LINE#         59
+  C:0183H         LINE#         60
+  C:018BH         LINE#         61
+  -------         ENDPROC       NGAT
+  -------         ENDMOD        DEM_SAN_PHAM
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0153H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0153H         LINE#         2
+  C:0153H         LINE#         3
+  C:0153H         LINE#         5
+  C:015DH         LINE#         6
+  C:0172H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        ?C?SIDIV
+  C:0006H         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?UIDIV
+  C:003CH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=17.0 xdata=0 code=420
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/03/2019  09:26:17  PAGE 4
+
+
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

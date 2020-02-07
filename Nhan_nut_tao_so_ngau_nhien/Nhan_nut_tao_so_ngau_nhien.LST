@@ -1,0 +1,42 @@
+C51 COMPILER V9.01   NHAN_NUT_TAO_SO_NGAU_NHIEN                                            10/24/2018 23:04:18 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE NHAN_NUT_TAO_SO_NGAU_NHIEN
+OBJECT MODULE PLACED IN Nhan_nut_tao_so_ngau_nhien.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE Nhan_nut_tao_so_ngau_nhien.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1            #include <main.h>
+   2            #include <..\library\delay.h>
+   3            unsigned char code code7seg[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   4            void main()
+   5            {
+   6   1          unsigned char dem = 0;
+   7   1          while(1)
+   8   1              {
+   9   2               if(BTN == 0)
+  10   2              {
+  11   3                 while(BTN == 0)
+  12   3                 { 
+  13   4                   dem++;
+  14   4                 }
+  15   3                 LED = code7seg[dem%9+1];
+  16   3                 delay(1);
+  17   3              }
+  18   2              }
+  19   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     36    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

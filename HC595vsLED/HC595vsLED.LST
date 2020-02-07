@@ -1,0 +1,59 @@
+C51 COMPILER V9.01   HC595VSLED                                                            04/26/2018 00:29:44 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE HC595VSLED
+OBJECT MODULE PLACED IN HC595vsLED.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE HC595vsLED.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1                           #include <REGX52.H>
+   2                           sbit xung = P0^0;
+   3                           sbit dl = P0^1;
+   4                           sbit chot = P0^2;
+   5                           unsigned char ma[] = {254, 245};
+   6                           void docma(unsigned char datal)
+   7                           {
+   8   1                         unsigned int i;
+   9   1                         for(i = 0; i < 8; i++)
+  10   1                         {
+  11   2                            dl = ((datal&0x80)==0x80);
+  12   2                                xung = 1;
+  13   2                                xung = 0;
+  14   2                                datal = datal*2;
+  15   2                         }
+  16   1                         chot = 1;
+  17   1                         chot = 0;
+  18   1                       }
+  19                           void delay(unsigned int t)
+  20                           {
+  21   1                         unsigned int x, y;
+  22   1                         for(x = 0; x < t; x++)
+  23   1                         for(y = 0; y < 123; y++);
+  24   1                       }
+  25                           void main()
+  26                           {
+  27   1                         int i;
+  28   1                         while(1)
+  29   1                         {
+  30   2                           for(i = 0; i < 2; i++)
+  31   2                               {
+  32   3                                 docma(ma[i]);
+  33   3                                 delay(500);
+  34   3                               }
+  35   2                         }
+  36   1                       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    101    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

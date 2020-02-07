@@ -1,0 +1,85 @@
+C51 COMPILER V9.01   I2C                                                                   11/29/2018 21:24:59 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE I2C
+OBJECT MODULE PLACED IN I2C.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE I2C.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1            #include <main.h>
+   2            #include "delay.h"
+   3            
+   4           
+   5            /****************Khai báo chân giao tiep I2C***************************/
+   6                  
+   7                  sbit SDA = P0^0;
+   8              sbit SCL = P0^1;
+   9          
+  10          /****************Cac ham giao tiep I2C***************************/
+  11          void I2C_time_start(){
+  12   1                SCL = 1; 
+  13   1                SDA = 1;
+  14   1                SDA = 0; 
+  15   1                SCL = 0; 
+  16   1      }
+  17          void I2C_time_stop(){
+  18   1                SCL = 1; 
+  19   1                SDA = 0; 
+  20   1                SDA=1;
+  21   1                SCL=1; 
+  22   1      }
+  23          unsigned char I2C_write(unsigned char dat){
+  24   1                unsigned char i;
+  25   1                for (i=0;i<8;i++){
+  26   2                          SDA = (dat & 0x80); ///? 1:0;
+  27   2                          SCL=1;
+  28   2                          SCL=0;
+  29   2                          dat<<=1;
+  30   2                }
+  31   1                SCL = 1; 
+  32   1                SCL = 0;
+  33   1                return dat;
+  34   1      }
+  35          unsigned char I2C_read(void){
+  36   1                bit rd_bit;
+  37   1                unsigned char i, dat;
+  38   1                dat = 0x00;
+  39   1                for(i=0;i<8;i++){ /* For loop read data 1 byte */
+  40   2                          SCL = 1;
+  41   2                          rd_bit = SDA; /* Keep for check acknowledge */
+  42   2                          dat = dat<<1;
+  43   2                          dat = dat | rd_bit; /* Keep bit data in dat */
+  44   2                          SCL = 0; /* Clear SCL */
+  45   2                }
+  46   1                return dat;
+  47   1      }
+  48            void main()
+  49            {
+  50   1          I2C_time_start();
+  51   1          while(1)
+  52   1              {
+  53   2                I2C_write(0x55);
+  54   2                delay(1);
+  55   2              }
+C51 COMPILER V9.01   I2C                                                                   11/29/2018 21:24:59 PAGE 2   
+
+  56   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     84    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

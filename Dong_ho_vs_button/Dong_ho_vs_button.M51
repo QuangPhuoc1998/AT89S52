@@ -1,0 +1,198 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/25/2018  00:54:25  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Dong_ho_vs_button.obj, .\delay.obj TO Dong_ho_vs_button RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Dong_ho_vs_button.obj (DONG_HO_VS_BUTTON)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  Dong_ho_vs_button (DONG_HO_VS_BUTTON)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?DONG_HO_VS_BUTTON
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0082H     UNIT         ?PR?MAIN?DONG_HO_VS_BUTTON
+            CODE    0111H     006FH     UNIT         ?PR?TIME_ON?DONG_HO_VS_BUTTON
+            CODE    0180H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    01A0H     000AH     UNIT         ?CO?DONG_HO_VS_BUTTON
+            CODE    01AAH     0007H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   Dong_ho_vs_button (DONG_HO_VS_BUTTON)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DONG_HO_VS_BUTTON
+  +--> ?C_INITSEG
+
+?PR?MAIN?DONG_HO_VS_BUTTON
+  +--> ?PR?TIME_ON?DONG_HO_VS_BUTTON
+  +--> ?CO?DONG_HO_VS_BUTTON
+
+?PR?TIME_ON?DONG_HO_VS_BUTTON
+  +--> ?CO?DONG_HO_VS_BUTTON
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Dong_ho_vs_button (DONG_HO_VS_BUTTON)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/25/2018  00:54:25  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DONG_HO_VS_BUTTON
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00B0H.5       PUBLIC        BTN_DOWN
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00B0H.7       PUBLIC        BTN_STOP
+  C:01A0H         PUBLIC        code7seg
+  D:0008H         PUBLIC        donvi
+  D:0009H         PUBLIC        chuc
+  C:008FH         PUBLIC        main
+  D:000AH         PUBLIC        giay
+  C:0111H         PUBLIC        TIME_ON
+  D:000BH         PUBLIC        phut
+  B:00B0H.3       PUBLIC        giaydonvi
+  B:00B0H.2       PUBLIC        giaychuc
+  B:0090H.0       PUBLIC        LED
+  B:00B0H.6       PUBLIC        BTN_START
+  B:00B0H.1       PUBLIC        phutdonvi
+  D:000CH         PUBLIC        i
+  B:00B0H.0       PUBLIC        phutchuc
+  B:00B0H.4       PUBLIC        BTN_UP
+  -------         PROC          TIME_ON
+  C:0111H         LINE#         10
+  C:0111H         LINE#         11
+  C:0111H         LINE#         12
+  C:0119H         LINE#         13
+  C:0122H         LINE#         15
+  C:012AH         LINE#         16
+  C:012CH         LINE#         17
+  C:0133H         LINE#         18
+  C:0135H         LINE#         20
+  C:013DH         LINE#         21
+  C:013FH         LINE#         22
+  C:0146H         LINE#         23
+  C:0148H         LINE#         25
+  C:0150H         LINE#         26
+  C:0159H         LINE#         28
+  C:0161H         LINE#         29
+  C:0163H         LINE#         30
+  C:016AH         LINE#         31
+  C:016CH         LINE#         33
+  C:0174H         LINE#         34
+  C:0176H         LINE#         35
+  C:017DH         LINE#         36
+  C:017FH         LINE#         37
+  -------         ENDPROC       TIME_ON
+  -------         PROC          MAIN
+  C:008FH         LINE#         38
+  C:008FH         LINE#         39
+  C:008FH         LINE#         41
+  C:008FH         LINE#         42
+  C:008FH         LINE#         43
+  C:0092H         LINE#         45
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/25/2018  00:54:25  PAGE 3
+
+
+  C:0095H         LINE#         46
+  C:0095H         LINE#         47
+  C:0098H         LINE#         48
+  C:0098H         LINE#         49
+  C:009BH         LINE#         50
+  C:009DH         LINE#         51
+  C:00A7H         LINE#         52
+  C:00A9H         LINE#         53
+  C:00A9H         LINE#         54
+  C:00ACH         LINE#         55
+  C:00ACH         LINE#         56
+  C:00AFH         LINE#         57
+  C:00AFH         LINE#         58
+  C:00B2H         LINE#         59
+  C:00B4H         LINE#         60
+  C:00BDH         LINE#         61
+  C:00BFH         LINE#         62
+  C:00BFH         LINE#         63
+  C:00C2H         LINE#         65
+  C:00C2H         LINE#         66
+  C:00C2H         LINE#         67
+  C:00CFH         LINE#         68
+  C:00CFH         LINE#         69
+  C:00D4H         LINE#         70
+  C:00D4H         LINE#         71
+  C:00D7H         LINE#         72
+  C:00E8H         LINE#         73
+  C:00ECH         LINE#         74
+  C:00ECH         LINE#         75
+  C:00EFH         LINE#         76
+  C:00F1H         LINE#         77
+  C:00F3H         LINE#         78
+  C:00F3H         LINE#         79
+  C:00F5H         LINE#         80
+  C:00F5H         LINE#         81
+  C:00F7H         LINE#         82
+  C:00FFH         LINE#         83
+  C:0101H         LINE#         84
+  C:0103H         LINE#         85
+  C:0105H         LINE#         86
+  C:0107H         LINE#         87
+  C:0109H         LINE#         88
+  C:010BH         LINE#         89
+  C:010EH         LINE#         90
+  C:010EH         LINE#         91
+  C:0110H         LINE#         92
+  C:0110H         LINE#         93
+  C:0110H         LINE#         94
+  C:0110H         LINE#         95
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DONG_HO_VS_BUTTON
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0180H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/25/2018  00:54:25  PAGE 4
+
+
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0180H         LINE#         2
+  C:0180H         LINE#         3
+  C:0180H         LINE#         5
+  C:018AH         LINE#         6
+  C:019FH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=15.0 xdata=0 code=433
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,194 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/25/2019  17:02:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE delay.obj, led_cube_3x3.obj TO led_cube_3x3 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  delay.obj (DELAY)
+  led_cube_3x3.obj (LED_CUBE_3X3)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  led_cube_3x3 (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?LED_CUBE_3X3
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0068H     UNIT         ?PR?MAIN?LED_CUBE_3X3
+            CODE    006BH     005EH     UNIT         ?PR?HU4?LED_CUBE_3X3
+            CODE    00C9H     0039H     UNIT         ?PR?HU1?LED_CUBE_3X3
+            CODE    0102H     0036H     UNIT         ?PR?HU2?LED_CUBE_3X3
+            CODE    0138H     0024H     UNIT         ?PR?HU3?LED_CUBE_3X3
+            CODE    015CH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    017CH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   led_cube_3x3 (DELAY)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LED_CUBE_3X3
+
+?PR?MAIN?LED_CUBE_3X3
+  +--> ?PR?HU4?LED_CUBE_3X3
+  +--> ?PR?HU1?LED_CUBE_3X3
+  +--> ?PR?HU2?LED_CUBE_3X3
+  +--> ?PR?HU3?LED_CUBE_3X3
+
+?PR?HU4?LED_CUBE_3X3
+  +--> ?PR?_DELAY?DELAY
+
+?PR?HU1?LED_CUBE_3X3
+  +--> ?PR?_DELAY?DELAY
+
+?PR?HU2?LED_CUBE_3X3
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2019  17:02:20  PAGE 2
+
+
+  +--> ?PR?_DELAY?DELAY
+
+?PR?HU3?LED_CUBE_3X3
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  led_cube_3x3 (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:015CH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:015CH         LINE#         2
+  C:015CH         LINE#         3
+  C:015CH         LINE#         5
+  C:0166H         LINE#         6
+  C:017BH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        LED_CUBE_3X3
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:00C9H         PUBLIC        hu1
+  C:0102H         PUBLIC        hu2
+  C:0138H         PUBLIC        hu3
+  C:006BH         PUBLIC        hu4
+  C:0003H         PUBLIC        main
+  B:00A0H.0       PUBLIC        tang_1
+  B:00A0H.1       PUBLIC        tang_2
+  B:00A0H.2       PUBLIC        tang_3
+  D:0008H         PUBLIC        i
+  B:00A0H.7       PUBLIC        led9
+  -------         PROC          MAIN
+  C:0003H         LINE#         17
+  C:0003H         LINE#         18
+  C:0003H         LINE#         19
+  C:0008H         LINE#         20
+  C:0008H         LINE#         21
+  C:000BH         LINE#         22
+  C:001CH         LINE#         23
+  C:001CH         LINE#         24
+  C:001CH         LINE#         25
+  C:0021H         LINE#         26
+  C:0021H         LINE#         27
+  C:0024H         LINE#         28
+  C:0035H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2019  17:02:20  PAGE 3
+
+
+  C:003AH         LINE#         30
+  C:003AH         LINE#         31
+  C:003DH         LINE#         32
+  C:004EH         LINE#         33
+  C:005EH         LINE#         34
+  C:005EH         LINE#         35
+  C:0061H         LINE#         36
+  -------         ENDPROC       MAIN
+  -------         PROC          HU1
+  C:00C9H         LINE#         39
+  C:00C9H         LINE#         40
+  C:00C9H         LINE#         41
+  C:00CEH         LINE#         42
+  C:00D4H         LINE#         43
+  C:00DBH         LINE#         44
+  C:00E1H         LINE#         45
+  C:00E8H         LINE#         46
+  C:00EEH         LINE#         47
+  C:00F5H         LINE#         48
+  C:00FBH         LINE#         49
+  -------         ENDPROC       HU1
+  -------         PROC          HU2
+  C:0102H         LINE#         51
+  C:0102H         LINE#         52
+  C:0102H         LINE#         53
+  C:0108H         LINE#         54
+  C:010DH         LINE#         55
+  C:0114H         LINE#         56
+  C:0119H         LINE#         57
+  C:0120H         LINE#         58
+  C:0125H         LINE#         59
+  C:012CH         LINE#         60
+  C:0131H         LINE#         61
+  -------         ENDPROC       HU2
+  -------         PROC          HU3
+  C:0138H         LINE#         63
+  C:0138H         LINE#         64
+  C:0138H         LINE#         65
+  C:013DH         LINE#         66
+  C:0143H         LINE#         67
+  C:014AH         LINE#         68
+  C:014FH         LINE#         69
+  C:0155H         LINE#         70
+  -------         ENDPROC       HU3
+  -------         PROC          HU4
+  C:006BH         LINE#         72
+  C:006BH         LINE#         73
+  C:006BH         LINE#         74
+  C:0070H         LINE#         75
+  C:0076H         LINE#         76
+  C:007DH         LINE#         77
+  C:0083H         LINE#         78
+  C:008AH         LINE#         79
+  C:0090H         LINE#         80
+  C:0097H         LINE#         81
+  C:009CH         LINE#         82
+  C:00A3H         LINE#         83
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/25/2019  17:02:20  PAGE 4
+
+
+  C:00A8H         LINE#         84
+  C:00AFH         LINE#         85
+  C:00B5H         LINE#         86
+  C:00BCH         LINE#         87
+  C:00C2H         LINE#         88
+  -------         ENDPROC       HU4
+  -------         ENDMOD        LED_CUBE_3X3
+
+Program Size: data=11.0 xdata=0 code=392
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,55 @@
+C51 COMPILER V9.01   MAIN                                                                  09/03/2019 00:00:25 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\PROGRAM\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "main.h"
+   2          #include <rtx51tny.h>
+   3          
+   4          //=========Ham Start up==========
+   5          void Startup(void) _task_ 0
+   6          { 
+   7   1       TMOD = 0x21;             //Timer 1 mode 2 
+   8   1       os_create_task (1);      //Tao Task "Led_Do" 
+   9   1       os_create_task (2);      //Tao Task "Led_Xanh"
+  10   1       os_delete_task (0);      //Xoa Task hien tai (Task 0)
+  11   1      }
+  12          void Task_1(void) _task_ 1
+  13          {
+  14   1        while(1)
+  15   1        {
+  16   2          P1 = 0xAA;
+  17   2              os_wait(K_TMO,50,0);
+  18   2              P1 = 0x55;
+  19   2              os_wait(K_TMO,50,0);
+  20   2        }
+  21   1      }
+  22          void Task_2(void) _task_ 2
+  23          {
+  24   1        while(1)
+  25   1        {
+  26   2          P3 = 0xAA;
+  27   2              os_wait(K_TMO,50,0);
+  28   2              P3 = 0x55;
+  29   2              os_wait(K_TMO,50,0);
+  30   2              os_switch_task ();
+  31   2        }
+  32   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     77    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,3 @@
+"main.obj" 
+TO "RTOS" Rtx51Tiny 
+RAMSIZE(256) 

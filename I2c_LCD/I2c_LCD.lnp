@@ -1,0 +1,4 @@
+"I2c_LCD.obj",
+".\delay.obj" 
+TO "I2c_LCD" 
+RAMSIZE(256) 

@@ -1,0 +1,97 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/03/2018  13:30:05  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE kiki.obj, delay.obj TO kiki RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  kiki.obj (KIKI)
+  delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  kiki (KIKI)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0021H     UNIT         ?PR?MAIN?KIKI
+            CODE    0024H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0044H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   kiki (KIKI)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?KIKI
+
+?PR?MAIN?KIKI
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  kiki (KIKI)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        KIKI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2018  13:30:05  PAGE 2
+
+
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:000FH         LINE#         6
+  C:000FH         LINE#         7
+  C:000FH         LINE#         8
+  C:0016H         LINE#         9
+  C:0019H         LINE#         10
+  C:001CH         LINE#         11
+  C:001FH         LINE#         12
+  C:0022H         LINE#         13
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        KIKI
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0024H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0024H         LINE#         3
+  C:0024H         LINE#         4
+  C:0024H         LINE#         6
+  C:002EH         LINE#         7
+  C:0043H         LINE#         8
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=9.0 xdata=0 code=80
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

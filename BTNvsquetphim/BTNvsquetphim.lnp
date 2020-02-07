@@ -1,0 +1,4 @@
+"BTNvsquetphim.obj",
+".\delay.obj" 
+TO "BTNvsquetphim" 
+RAMSIZE(256) 

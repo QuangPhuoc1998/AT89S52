@@ -1,0 +1,57 @@
+C51 COMPILER V9.01   VDK2                                                                  11/28/2018 08:46:46 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE VDK2
+OBJECT MODULE PLACED IN vdk2.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE vdk2.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1                  #include <main.h>
+   2                  #include "..\library\delay.h"
+   3                  #include "E:\file Keil C\AT89S52\library\UARTmode1.h"
+   4                  
+   5                  void main()
+   6                          {
+   7   1                      P1_0 = 1;
+   8   1                      UART_Init();
+   9   1                      while(1)
+  10   1                              {
+  11   2                               if(UART_Data_really()==1)
+  12   2                               {
+  13   3                                 if(UART_read()==0x01)
+  14   3                                 {
+  15   4                                   while(1)
+  16   4                                       {
+  17   5                                         P1 = 0xAA;
+  18   5                                         delay(500);
+  19   5                                         P1 = ~P1;
+  20   5                                         delay(500);
+  21   5                                         if(UART_read()==0x00) 
+  22   5                                         {
+  23   6                                           P1 = 0xFF;
+  24   6                                           break;
+  25   6                                         }
+  26   5                                       }
+  27   4                                 }
+  28   3                               }
+  29   2                              }
+  30   1                      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     48    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

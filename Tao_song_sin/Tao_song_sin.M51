@@ -1,0 +1,99 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/25/2018  22:56:15  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Tao_song_sin.obj, .\delay.obj TO Tao_song_sin RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Tao_song_sin.obj (TAO_SONG_SIN)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Tao_song_sin (TAO_SONG_SIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0027H     UNIT         ?PR?MAIN?TAO_SONG_SIN
+            CODE    002AH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    004AH     0014H     UNIT         ?CO?TAO_SONG_SIN
+            CODE    005EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Tao_song_sin (TAO_SONG_SIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?TAO_SONG_SIN
+
+?PR?MAIN?TAO_SONG_SIN          0008H    0002H
+  +--> ?CO?TAO_SONG_SIN
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Tao_song_sin (TAO_SONG_SIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TAO_SONG_SIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0003H         PUBLIC        main
+  C:004AH         PUBLIC        DACvalue
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/25/2018  22:56:15  PAGE 2
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         6
+  C:0003H         LINE#         7
+  C:0003H         LINE#         9
+  C:0003H         LINE#         10
+  C:0003H         LINE#         11
+  C:0008H         LINE#         12
+  C:0008H         LINE#         13
+  C:0010H         LINE#         14
+  C:0017H         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TAO_SONG_SIN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:002AH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:002AH         LINE#         2
+  C:002AH         LINE#         3
+  C:002AH         LINE#         5
+  C:0034H         LINE#         6
+  C:0049H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=11.0 xdata=0 code=106
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

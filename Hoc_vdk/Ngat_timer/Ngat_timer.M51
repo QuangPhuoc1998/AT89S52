@@ -1,0 +1,125 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/26/2018  09:54:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) CODE (0X0000-0X1FFF)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Ngat_timer.obj (NGAT_TIMER)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  Ngat_timer (NGAT_TIMER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?NGAT_TIMER
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0005H     UNIT         ?C_INITSEG
+                    0008H     0003H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    009AH     0021H     UNIT         ?PR?NGAT?NGAT_TIMER
+            CODE    00BBH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    00DBH     0014H     UNIT         ?PR?MAIN?NGAT_TIMER
+
+
+
+OVERLAY MAP OF MODULE:   Ngat_timer (NGAT_TIMER)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?NGAT_TIMER
+  +--> ?C_INITSEG
+
+
+
+SYMBOL TABLE OF MODULE:  Ngat_timer (NGAT_TIMER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NGAT_TIMER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  B:00A8H.7       PUBLIC        EA
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/26/2018  09:54:08  PAGE 2
+
+
+  C:00DBH         PUBLIC        main
+  C:009AH         PUBLIC        ngat
+  D:0089H         PUBLIC        TMOD
+  D:0008H         PUBLIC        cnt
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          MAIN
+  C:00DBH         LINE#         4
+  C:00DBH         LINE#         5
+  C:00DBH         LINE#         6
+  C:00DEH         LINE#         7
+  C:00E1H         LINE#         8
+  C:00E4H         LINE#         9
+  C:00E7H         LINE#         10
+  C:00E9H         LINE#         11
+  C:00EBH         LINE#         12
+  C:00EDH         LINE#         13
+  C:00EDH         LINE#         14
+  C:00EDH         LINE#         21
+  -------         ENDPROC       MAIN
+  -------         PROC          NGAT
+  C:009AH         LINE#         23
+  C:009CH         LINE#         25
+  C:009FH         LINE#         26
+  C:00A2H         LINE#         27
+  C:00AAH         LINE#         28
+  C:00B0H         LINE#         29
+  C:00B0H         LINE#         30
+  C:00B5H         LINE#         31
+  C:00B8H         LINE#         32
+  C:00B8H         LINE#         34
+  -------         ENDPROC       NGAT
+  -------         ENDMOD        NGAT_TIMER
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00BBH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:00BBH         LINE#         2
+  C:00BBH         LINE#         3
+  C:00BBH         LINE#         5
+  C:00C5H         LINE#         6
+  C:00DAH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+
+Program Size: data=11.0 xdata=0 code=236
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/26/2018  09:54:08  PAGE 3
+
+
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

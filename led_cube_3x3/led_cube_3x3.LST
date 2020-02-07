@@ -1,0 +1,114 @@
+C51 COMPILER V9.01   LED_CUBE_3X3                                                          02/25/2019 17:02:20 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LED_CUBE_3X3
+OBJECT MODULE PLACED IN led_cube_3x3.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE led_cube_3x3.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <main.h>
+   2          #include <delay.h>
+   3          /* khai bao */
+   4          #define cube P0
+   5          sbit tang_1 = P2^0;
+   6          sbit tang_2 = P2^1;
+   7          sbit tang_3 = P2^2;
+   8          sbit led9 = P2^7;
+   9          /* hieu ung */
+  10          void hu1();
+  11          void hu2();
+  12          void hu3();
+  13          void hu4();
+  14          void hu5();
+  15          /* chuong trình chinh */
+  16          unsigned int i;
+  17          void main()
+  18          { 
+  19   1        for(i=0;i<5;i++)
+  20   1              {
+  21   2            hu4();
+  22   2              }
+  23   1        while(1)
+  24   1        {
+  25   2          for(i=0;i<2;i++)
+  26   2              {
+  27   3            hu1();
+  28   3              }
+  29   2              for(i=0;i<2;i++)
+  30   2              {
+  31   3            hu2();
+  32   3              }
+  33   2              for(i=0;i<5;i++)
+  34   2              {
+  35   3            hu3();
+  36   3              }          
+  37   2        }
+  38   1      }
+  39          void hu1()
+  40          {
+  41   1        cube = 0x00; led9 = 0;
+  42   1        tang_1 = 1; tang_2 = 0; tang_3 = 0;
+  43   1        delay(500);
+  44   1        tang_1 = 0; tang_2 = 1; tang_3 = 0;
+  45   1        delay(500);
+  46   1        tang_1 = 0; tang_2 = 0; tang_3 = 1;
+  47   1        delay(500);
+  48   1        tang_1 = 0; tang_2 = 1; tang_3 = 0;
+  49   1        delay(500);
+  50   1      }
+  51          void hu2()
+  52          {
+  53   1        tang_1 = tang_2 = tang_3 = 1;
+  54   1        cube = 0xF8; led9 = 1;
+  55   1        delay(500);
+C51 COMPILER V9.01   LED_CUBE_3X3                                                          02/25/2019 17:02:20 PAGE 2   
+
+  56   1        cube = 0xC7; led9 = 1;
+  57   1        delay(500);
+  58   1        cube = 0x3F; led9 = 0;
+  59   1        delay(500);
+  60   1        cube = 0xC7; led9 = 1;
+  61   1        delay(500);
+  62   1      }
+  63          void hu3()
+  64          {
+  65   1        cube = 0xAA; led9 = 0;
+  66   1        tang_1 = tang_2 = tang_3 = 1; 
+  67   1        delay(500);
+  68   1        cube = 0x55; led9 = 1;
+  69   1        tang_1 = tang_2 = tang_3 = 1; 
+  70   1        delay(500);
+  71   1      }
+  72          void hu4()
+  73          {
+  74   1        cube = 0xEF; led9 = 1;
+  75   1        tang_1 = 1; tang_2 = 0; tang_3 = 0;
+  76   1        delay(150);
+  77   1        tang_1 = 0; tang_2 = 1; tang_3 = 0;
+  78   1        delay(150);
+  79   1        tang_1 = 0; tang_2 = 0; tang_3 = 1;
+  80   1        delay(200);
+  81   1        cube = 0xAA; led9 = 0;
+  82   1        delay(250);
+  83   1        cube = 0x55; led9 = 1;
+  84   1        delay(250);
+  85   1        tang_1 = 0; tang_2 = 1; tang_3 = 0;
+  86   1        delay(200);
+  87   1        tang_1 = 1; tang_2 = 0; tang_3 = 0;
+  88   1        delay(200);
+  89   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    345    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

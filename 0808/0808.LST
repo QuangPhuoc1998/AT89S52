@@ -1,0 +1,84 @@
+C51 COMPILER V9.01   0808                                                                  02/06/2019 00:26:02 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE 0808
+OBJECT MODULE PLACED IN 0808.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE 0808.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1            #include <main.h>
+   2            #include <delay.h>
+   3            #include <LCD4.h>
+   4            #include <stdio.h>
+   5          
+   6            char buffer[16];
+   7            unsigned int c;
+   8            void ADC0808_Init()
+   9          {
+  10   1              STA = 0;
+  11   1              ALE = 0;
+  12   1              OE = 0; 
+  13   1      }
+  14            unsigned char ADC0808_Read(unsigned char channel)
+  15          {
+  16   1              unsigned char kq;
+  17   1      
+  18   1              PA = channel & 0x01;
+  19   1              PB = channel & 0x02;
+  20   1              PC = channel & 0x04;
+  21   1      
+  22   1              ALE = 1;
+  23   1              STA = 1;
+  24   1              ALE = 0;
+  25   1              STA = 0;
+  26   1      
+  27   1              while(EOC);
+  28   1              while(EOC);
+  29   1      
+  30   1              OE = 1;
+  31   1              kq = ADC0808_DATA;
+  32   1              OE = 0;
+  33   1      
+  34   1              return kq;
+  35   1      }
+  36            void main()
+  37            {
+  38   1          sprintf("hi");
+*** WARNING C209 IN LINE 38 OF 0808.C: '_sprintf': too few actual parameters
+  39   1          unsigned char adc_value;
+*** ERROR C141 IN LINE 39 OF 0808.C: syntax error near 'unsigned'
+*** ERROR C202 IN LINE 39 OF 0808.C: 'adc_value': undefined identifier
+  40   1              unsigned int voltage;
+*** ERROR C141 IN LINE 40 OF 0808.C: syntax error near 'unsigned'
+*** ERROR C202 IN LINE 40 OF 0808.C: 'voltage': undefined identifier
+  41   1      
+  42   1              ADC0808_Init();
+  43   1              Lcd_Init();
+  44   1      
+  45   1              //Lcd_Out(1,1,"Hello ");
+  46   1              while(1)
+  47   1              {
+  48   2                      adc_value = ADC0808_Read(0);
+*** ERROR C202 IN LINE 48 OF 0808.C: 'adc_value': undefined identifier
+  49   2      
+C51 COMPILER V9.01   0808                                                                  02/06/2019 00:26:02 PAGE 2   
+
+  50   2      //              Lcd_Chr(1,1,adc_value/100+0x30);
+  51   2      //              Lcd_Chr_Cp(adc_value%100/10+0x30);
+  52   2      //              Lcd_Chr_Cp(adc_value%10+0x30);
+  53   2      //
+  54   2      //              voltage = adc_value * 19.61f;
+  55   2      //
+  56   2      //              Lcd_Chr(2,1,voltage/1000+0x30);
+  57   2      //              Lcd_Chr_Cp('.');
+  58   2      //              Lcd_Chr_Cp(voltage%1000/100+0x30);
+  59   2      //              Lcd_Chr_Cp(voltage%100/10+0x30);
+  60   2      //              Lcd_Chr_Cp(voltage%10+0x30);
+  61   2      
+  62   2                      delay_ms(500);   
+  63   2              }
+  64   1        }
+  65            
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  5 ERROR(S)

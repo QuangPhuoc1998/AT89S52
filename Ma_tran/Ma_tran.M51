@@ -1,0 +1,173 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/01/2018  23:57:56  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Ma_tran.obj, .\delay.obj TO Ma_tran RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Ma_tran.obj (MA_TRAN)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Ma_tran (MA_TRAN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?MA_TRAN
+            DATA    000AH     0001H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0062H     UNIT         ?PR?KEYPRESS?MA_TRAN
+            CODE    0065H     0036H     UNIT         ?PR?_TIME_ON?MA_TRAN
+            CODE    009BH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    00BBH     0012H     UNIT         ?PR?MAIN?MA_TRAN
+            CODE    00CDH     000CH     UNIT         ?C_C51STARTUP
+            CODE    00D9H     000AH     UNIT         ?CO?MA_TRAN
+
+
+
+OVERLAY MAP OF MODULE:   Ma_tran (MA_TRAN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MA_TRAN
+
+?PR?MAIN?MA_TRAN               000AH    0001H
+  +--> ?PR?KEYPRESS?MA_TRAN
+  +--> ?PR?_TIME_ON?MA_TRAN
+
+?PR?_TIME_ON?MA_TRAN           -----    -----
+  +--> ?CO?MA_TRAN
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Ma_tran (MA_TRAN)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/01/2018  23:57:56  PAGE 2
+
+
+  ----------------------------------
+
+  -------         MODULE        MA_TRAN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:00D9H         PUBLIC        code7seg
+  D:0008H         PUBLIC        donvi
+  D:0009H         PUBLIC        chuc
+  C:00BBH         PUBLIC        main
+  C:0003H         PUBLIC        KeyPress
+  C:0065H         PUBLIC        _Time_on
+  B:0090H.0       PUBLIC        Col1
+  B:0090H.1       PUBLIC        Col2
+  B:0090H.2       PUBLIC        Col3
+  B:0090H.3       PUBLIC        Col4
+  B:00B0H.1       PUBLIC        LED_donvi
+  B:00B0H.0       PUBLIC        LED_chuc
+  B:0090H.4       PUBLIC        Cow1
+  B:0090H.5       PUBLIC        Cow2
+  B:0090H.6       PUBLIC        Cow3
+  B:0090H.7       PUBLIC        Cow4
+  -------         PROC          KEYPRESS
+  -------         DO            
+  D:0007H         SYMBOL        key
+  -------         ENDDO         
+  C:0003H         LINE#         6
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+  C:0005H         LINE#         9
+  C:0007H         LINE#         10
+  C:000BH         LINE#         11
+  C:0010H         LINE#         12
+  C:0015H         LINE#         13
+  C:001AH         LINE#         14
+  C:001CH         LINE#         16
+  C:001EH         LINE#         17
+  C:0023H         LINE#         18
+  C:0028H         LINE#         19
+  C:002DH         LINE#         20
+  C:0032H         LINE#         21
+  C:0034H         LINE#         23
+  C:0036H         LINE#         24
+  C:003BH         LINE#         25
+  C:0040H         LINE#         26
+  C:0045H         LINE#         27
+  C:004AH         LINE#         28
+  C:004CH         LINE#         30
+  C:004EH         LINE#         31
+  C:0053H         LINE#         32
+  C:0058H         LINE#         33
+  C:005DH         LINE#         34
+  C:0062H         LINE#         35
+  C:0064H         LINE#         37
+  C:0064H         LINE#         38
+  -------         ENDPROC       KEYPRESS
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/01/2018  23:57:56  PAGE 3
+
+
+  -------         PROC          _TIME_ON
+  D:0007H         SYMBOL        a
+  C:0065H         LINE#         40
+  C:0065H         LINE#         41
+  C:0065H         LINE#         42
+  C:006CH         LINE#         43
+  C:0074H         LINE#         45
+  C:007CH         LINE#         46
+  C:007EH         LINE#         47
+  C:0085H         LINE#         48
+  C:0087H         LINE#         50
+  C:008FH         LINE#         51
+  C:0091H         LINE#         52
+  C:0098H         LINE#         53
+  C:009AH         LINE#         54
+  -------         ENDPROC       _TIME_ON
+  -------         PROC          MAIN
+  -------         DO            
+  D:000AH         SYMBOL        tmp
+  -------         ENDDO         
+  C:00BBH         LINE#         55
+  C:00BBH         LINE#         56
+  C:00BBH         LINE#         58
+  C:00BBH         LINE#         59
+  C:00BBH         LINE#         60
+  C:00C6H         LINE#         61
+  C:00CBH         LINE#         62
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MA_TRAN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:009BH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:009BH         LINE#         2
+  C:009BH         LINE#         3
+  C:009BH         LINE#         5
+  C:00A5H         LINE#         6
+  C:00BAH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=12.0 xdata=0 code=227
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,6 @@
+"UART_mode1.obj",
+".\delay.obj",
+".\UARTmode1.obj" 
+TO "UART_mode1" 
+
+ru 

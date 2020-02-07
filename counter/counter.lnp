@@ -1,0 +1,4 @@
+"counter.obj",
+".\delay.obj" 
+TO "counter" 
+RAMSIZE(256) 

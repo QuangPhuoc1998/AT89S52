@@ -1,0 +1,6 @@
+"text_LCD.obj",
+".\delay.obj",
+".\LCD4.obj" 
+TO "text_LCD" 
+
+ru 

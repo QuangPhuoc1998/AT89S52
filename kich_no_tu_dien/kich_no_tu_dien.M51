@@ -1,0 +1,128 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/06/2018  23:59:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE kich_no_tu_dien.obj, .\delay.obj TO kich_no_tu_dien RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  kich_no_tu_dien.obj (KICH_NO_TU_DIEN)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  kich_no_tu_dien (KICH_NO_TU_DIEN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0060H     UNIT         ?PR?MAIN?KICH_NO_TU_DIEN
+            CODE    0063H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0083H     000CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     000AH     UNIT         ?CO?KICH_NO_TU_DIEN
+
+
+
+OVERLAY MAP OF MODULE:   kich_no_tu_dien (KICH_NO_TU_DIEN)
+
+
+SEGMENT                            DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?KICH_NO_TU_DIEN
+
+?PR?MAIN?KICH_NO_TU_DIEN         0008H    0002H
+  +--> ?CO?KICH_NO_TU_DIEN
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  kich_no_tu_dien (KICH_NO_TU_DIEN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        KICH_NO_TU_DIEN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/06/2018  23:59:38  PAGE 2
+
+
+  C:008FH         PUBLIC        code7seg
+  B:00A0H.0       PUBLIC        relay
+  C:0003H         PUBLIC        main
+  B:0090H.0       PUBLIC        BTN
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0009H         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0003H         LINE#         9
+  C:0006H         LINE#         10
+  C:0006H         LINE#         11
+  C:0006H         LINE#         12
+  C:000DH         LINE#         13
+  C:000DH         LINE#         14
+  C:0010H         LINE#         16
+  C:0013H         LINE#         17
+  C:0013H         LINE#         18
+  C:001BH         LINE#         19
+  C:0022H         LINE#         20
+  C:002BH         LINE#         21
+  C:002EH         LINE#         22
+  C:0030H         LINE#         23
+  C:0033H         LINE#         24
+  C:0033H         LINE#         25
+  C:003BH         LINE#         26
+  C:003BH         LINE#         27
+  C:003EH         LINE#         29
+  C:0041H         LINE#         30
+  C:0041H         LINE#         31
+  C:0049H         LINE#         32
+  C:0050H         LINE#         33
+  C:0059H         LINE#         34
+  C:005CH         LINE#         35
+  C:005EH         LINE#         36
+  C:0061H         LINE#         37
+  C:0061H         LINE#         38
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        KICH_NO_TU_DIEN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0063H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0063H         LINE#         2
+  C:0063H         LINE#         3
+  C:0063H         LINE#         5
+  C:006DH         LINE#         6
+  C:0082H         LINE#         7
+  -------         ENDPROC       _DELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/06/2018  23:59:38  PAGE 3
+
+
+  -------         ENDMOD        DELAY
+
+Program Size: data=11.0 xdata=0 code=153
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+"Dem_san_pham.obj",
+".\delay.obj" 
+TO "Dem_san_pham" 
+RAMSIZE(256) 

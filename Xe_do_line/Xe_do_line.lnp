@@ -1,0 +1,4 @@
+"Xe_do_line.obj",
+".\delay.obj" 
+TO "Xe_do_line" 
+RAMSIZE(256) 

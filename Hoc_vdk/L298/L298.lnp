@@ -1,0 +1,4 @@
+"L298.obj",
+".\delay.obj" 
+TO "L298" 
+RAMSIZE(256) 

@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\file Keil C\AT89S52\servo\servo.uvproj
+Project File Date:  12/11/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling servo.c...
+linking...
+Program Size: data=21.0 xdata=0 const=0 code=574
+creating hex file from "servo"...
+"servo" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling servo.c...
+linking...
+Program Size: data=21.0 xdata=0 const=0 code=570
+creating hex file from "servo"...
+"servo" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=21.0 xdata=0 const=0 code=570
+creating hex file from "servo"...
+"servo" - 0 Error(s), 0 Warning(s).

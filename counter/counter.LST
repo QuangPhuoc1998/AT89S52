@@ -1,0 +1,90 @@
+C51 COMPILER V9.01   COUNTER                                                               01/15/2019 13:02:40 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE COUNTER
+OBJECT MODULE PLACED IN counter.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE counter.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <main.h>
+   2          #include <..\library\delay.h>
+   3          
+   4          unsigned char code code7seg[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   5          int donvi, chuc, tram, nghin, dem;
+   6          void time_on(unsigned int dem);
+   7          void delay_time(unsigned int t);
+   8          
+   9          void main()
+  10          {  
+  11   1        unsigned char high, low;
+  12   1        unsigned int number; 
+  13   1        TMOD = 0x51;
+  14   1        TR1 = 1;
+  15   1        while(1)
+  16   1        {
+  17   2          do
+  18   2              {
+  19   3                high = TH1;
+  20   3                low = TL1;
+  21   3              } while(high!=TH1);
+  22   2              number = high;
+  23   2              number <<= 8;
+  24   2              number |= low;
+  25   2              time_on(number);
+  26   2        }
+  27   1      }
+  28          void delay_ms(unsigned int t)
+  29          {
+  30   1        unsigned int x;
+  31   1        for(x=0;x<t;x++)
+  32   1        {
+  33   2              TH0 = 0xFC;
+  34   2              TL0 = 0x18;
+  35   2              TF0 = 0;
+  36   2              TR0 = 1;
+  37   2              while(!TF0);
+  38   2              TF0 = 0;
+  39   2              TR0 = 0;
+  40   2        }
+  41   1      }
+  42          void time_on(unsigned int dem)
+  43          {
+  44   1        nghin = dem/1000;
+  45   1        tram = (dem%1000)/100;
+  46   1        chuc = (dem%100)/10;
+  47   1        donvi = dem%10;
+  48   1        
+  49   1          LED = code7seg[donvi];
+  50   1              L1= 0;
+  51   1              delay_ms(1);
+  52   1              L1 = 1;
+  53   1              LED = code7seg[chuc];
+  54   1              L2 = 0;
+  55   1              delay_ms(1);
+C51 COMPILER V9.01   COUNTER                                                               01/15/2019 13:02:40 PAGE 2   
+
+  56   1              L2 = 1;
+  57   1              LED = code7seg[tram];
+  58   1              L3 = 0;
+  59   1              delay_ms(1);
+  60   1              L3 = 1;
+  61   1              LED = code7seg[nghin];
+  62   1              L4 = 0;
+  63   1              delay_ms(1);
+  64   1              L4 = 1;  
+  65   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    260    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

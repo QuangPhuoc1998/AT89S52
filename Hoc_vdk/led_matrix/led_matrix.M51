@@ -1,0 +1,99 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/15/2019  21:54:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE led_matrix.obj TO led_matrix RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  led_matrix.obj (LED_MATRIX)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  led_matrix (LED_MATRIX)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?LED_MATRIX
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0050H     UNIT         ?PR?MAIN?LED_MATRIX
+            CODE    0053H     0020H     UNIT         ?PR?_DELAY?LED_MATRIX
+            CODE    0073H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   led_matrix (LED_MATRIX)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LED_MATRIX
+
+?PR?MAIN?LED_MATRIX
+  +--> ?PR?_DELAY?LED_MATRIX
+
+
+
+SYMBOL TABLE OF MODULE:  led_matrix (LED_MATRIX)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LED_MATRIX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0053H         PUBLIC        _delay
+  C:0003H         PUBLIC        main
+  D:0008H         PUBLIC        TTDC
+  D:0009H         PUBLIC        TTCD
+  D:000AH         PUBLIC        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/15/2019  21:54:27  PAGE 2
+
+
+  D:000CH         PUBLIC        j
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0053H         LINE#         5
+  C:0053H         LINE#         6
+  C:0053H         LINE#         8
+  C:005DH         LINE#         9
+  C:0072H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:0003H         LINE#         13
+  C:0003H         LINE#         14
+  C:0003H         LINE#         15
+  C:0006H         LINE#         16
+  C:000BH         LINE#         17
+  C:000BH         LINE#         18
+  C:000EH         LINE#         19
+  C:001EH         LINE#         20
+  C:001EH         LINE#         21
+  C:0024H         LINE#         22
+  C:002BH         LINE#         23
+  C:0031H         LINE#         24
+  C:003BH         LINE#         25
+  C:003EH         LINE#         26
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LED_MATRIX
+
+Program Size: data=15.0 xdata=0 code=127
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

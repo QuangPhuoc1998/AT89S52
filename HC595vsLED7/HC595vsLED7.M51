@@ -1,0 +1,98 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/25/2018  23:55:15  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE HC595vsLED7.obj TO HC595vsLED7 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  HC595vsLED7.obj (HC595VSLED7)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  HC595vsLED7 (HC595VSLED7)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000CH     UNIT         ?DT?HC595VSLED7
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0035H     UNIT         ?PR?MAIN?HC595VSLED7
+            CODE    00C4H     0020H     UNIT         ?PR?_DELAY?HC595VSLED7
+            CODE    00E4H     000DH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   HC595vsLED7 (HC595VSLED7)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?HC595VSLED7
+  +--> ?C_INITSEG
+
+?PR?MAIN?HC595VSLED7
+  +--> ?PR?_DELAY?HC595VSLED7
+
+
+
+SYMBOL TABLE OF MODULE:  HC595vsLED7 (HC595VSLED7)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        HC595VSLED7
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:00C4H         PUBLIC        _delay
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/25/2018  23:55:15  PAGE 2
+
+
+  C:008FH         PUBLIC        main
+  D:0008H         PUBLIC        ma
+  D:0012H         PUBLIC        i
+  D:0013H         PUBLIC        t
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:00C4H         LINE#         4
+  C:00C4H         LINE#         5
+  C:00C4H         LINE#         7
+  C:00CEH         LINE#         8
+  C:00E3H         LINE#         9
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:008FH         LINE#         10
+  C:008FH         LINE#         11
+  C:008FH         LINE#         12
+  C:0092H         LINE#         13
+  C:0095H         LINE#         14
+  C:0095H         LINE#         15
+  C:0095H         LINE#         16
+  C:0098H         LINE#         17
+  C:0098H         LINE#         18
+  C:00A4H         LINE#         19
+  C:00B2H         LINE#         20
+  C:00B9H         LINE#         22
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        HC595VSLED7
+
+Program Size: data=21.0 xdata=0 code=241
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

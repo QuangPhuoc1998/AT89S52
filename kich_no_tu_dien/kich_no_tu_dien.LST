@@ -1,0 +1,62 @@
+C51 COMPILER V9.01   KICH_NO_TU_DIEN                                                       07/06/2018 23:59:38 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE KICH_NO_TU_DIEN
+OBJECT MODULE PLACED IN kich_no_tu_dien.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE kich_no_tu_dien.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <main.h>
+   2          #include <E:\file Keil C\AT89S52\library\delay.h>
+   3          unsigned char code code7seg[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   4          
+   5          void main()
+   6          {
+   7   1         unsigned char i;
+   8   1         unsigned char y;
+   9   1         y = 0;
+  10   1         while(1)
+  11   1         {
+  12   2            if (BTN == 0 && y == 0)
+  13   2                {
+  14   3                 while(BTN == 0);
+  15   3                 
+  16   3                 for(i=9;i>0;i--)
+  17   3                 {
+  18   4                   LED = code7seg[i];
+  19   4                       delay(500);
+  20   4                 }
+  21   3                 LED = 0xC0;
+  22   3                 relay = 0;
+  23   3                 y = 1;
+  24   3                }
+  25   2                if (BTN == 0 && y == 1)
+  26   2                {
+  27   3                      while(BTN == 0);
+  28   3                 
+  29   3                 for(i=9;i>0;i--)
+  30   3                 {
+  31   4                   LED = code7seg[i];
+  32   4                       delay(500);
+  33   4                 }
+  34   3                 LED = 0xC0;
+  35   3                 relay = 1;
+  36   3                 y = 0;
+  37   3                }
+  38   2         }
+  39   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     96    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

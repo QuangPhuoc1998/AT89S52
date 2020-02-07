@@ -1,0 +1,91 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/26/2018  13:15:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Xe_do_line.obj, .\delay.obj TO Xe_do_line RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Xe_do_line.obj (XE_DO_LINE)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Xe_do_line (XE_DO_LINE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0023H     0010H     UNIT         ?PR?MAIN?XE_DO_LINE
+            CODE    0033H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Xe_do_line (XE_DO_LINE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?XE_DO_LINE
+
+?PR?MAIN?XE_DO_LINE
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Xe_do_line (XE_DO_LINE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        XE_DO_LINE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  B:00A0H.1       PUBLIC        P2_1
+  C:0023H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0023H         LINE#         4
+  C:0023H         LINE#         5
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/26/2018  13:15:57  PAGE 2
+
+
+  C:0023H         LINE#         6
+  C:0023H         LINE#         7
+  C:0023H         LINE#         8
+  C:002AH         LINE#         9
+  C:0031H         LINE#         10
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        XE_DO_LINE
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         5
+  C:000DH         LINE#         6
+  C:0022H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=9.0 xdata=0 code=63
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,25 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\file Keil C\AT89S52\Lm35\lm35.uvproj
+Project File Date:  11/14/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+linking...
+Program Size: data=17.0 xdata=0 const=0 code=1297
+creating hex file from "lm35"...
+"lm35" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lm35.c...
+linking...
+Program Size: data=17.0 xdata=0 const=0 code=1297
+creating hex file from "lm35"...
+"lm35" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=17.0 xdata=0 const=0 code=1297
+creating hex file from "lm35"...
+"lm35" - 0 Error(s), 0 Warning(s).

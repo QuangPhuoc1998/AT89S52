@@ -1,0 +1,97 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/24/2018  08:09:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE relay.obj, .\delay.obj TO relay RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  relay.obj (RELAY)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  relay (RELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0023H     0015H     UNIT         ?PR?MAIN?RELAY
+            CODE    0038H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   relay (RELAY)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?RELAY
+
+?PR?MAIN?RELAY
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  relay (RELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        RELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A0H.1       PUBLIC        RELAY
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0023H         PUBLIC        main
+  B:0090H.0       PUBLIC        BTN
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2018  08:09:54  PAGE 2
+
+
+  C:0023H         LINE#         6
+  C:0023H         LINE#         7
+  C:0023H         LINE#         8
+  C:0025H         LINE#         9
+  C:0027H         LINE#         10
+  C:0027H         LINE#         11
+  C:0027H         LINE#         12
+  C:002EH         LINE#         13
+  C:0031H         LINE#         14
+  C:0031H         LINE#         15
+  C:0033H         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        RELAY
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         5
+  C:000DH         LINE#         6
+  C:0022H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=9.0 xdata=0 code=68
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

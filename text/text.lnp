@@ -1,0 +1,4 @@
+"text.obj",
+".\delay.obj" 
+TO "text" 
+RAMSIZE(256) 

@@ -1,0 +1,70 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\file Keil C\AT89S52\Hoc_vdk\mode_2\mode_2.uvproj
+Project File Date:  10/01/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+Target has no object modules
+Target not created
+Build target 'Target 1'
+compiling mode_2.c...
+MODE_2.C(9): warning C206: 'delay_50us': missing function-prototype
+MODE_2.C(14): error C231: 'delay_50us': redefinition
+MODE_2.C(24): error C231: 'delay_50us': redefinition
+Target not created
+Build target 'Target 1'
+compiling mode_2.c...
+MODE_2.C(9): warning C206: 'delay_50us': missing function-prototype
+MODE_2.C(14): error C231: 'delay_50us': redefinition
+MODE_2.C(24): error C231: 'delay_50us': redefinition
+Target not created
+Build target 'Target 1'
+compiling mode_2.c...
+MODE_2.C(9): warning C206: 'delay_50us': missing function-prototype
+MODE_2.C(14): error C231: 'delay_50us': redefinition
+MODE_2.C(24): error C231: 'delay_50us': redefinition
+Target not created
+Build target 'Target 1'
+compiling mode_2.c...
+MODE_2.C(9): warning C206: 'delay_50us': missing function-prototype
+MODE_2.C(14): error C231: 'delay_50us': redefinition
+MODE_2.C(24): error C231: 'delay_50us': redefinition
+Target not created
+Build target 'Target 1'
+compiling mode_2.c...
+MODE_2.C(9): warning C206: 'delay_50us': missing function-prototype
+MODE_2.C(14): error C231: 'delay_50us': redefinition
+MODE_2.C(24): error C231: 'delay_50us': redefinition
+Target not created
+Build target 'Target 1'
+compiling mode_2.c...
+MODE_2.C(9): warning C206: 'delay_50us': missing function-prototype
+MODE_2.C(14): error C231: 'delay_50us': redefinition
+MODE_2.C(24): error C231: 'delay_50us': redefinition
+Target not created
+Build target 'Target 1'
+compiling mode_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=40
+creating hex file from "mode_2"...
+"mode_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=40
+creating hex file from "mode_2"...
+"mode_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling mode_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=42
+creating hex file from "mode_2"...
+"mode_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=42
+creating hex file from "mode_2"...
+"mode_2" - 0 Error(s), 0 Warning(s).

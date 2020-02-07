@@ -1,0 +1,54 @@
+C51 COMPILER V9.01   SPI_VDK1                                                              11/28/2018 10:22:11 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SPI_VDK1
+OBJECT MODULE PLACED IN SPI_vdk1.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE SPI_vdk1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           #include <main.h>
+   2           #include "delay.h"
+   3          
+   4           void Soft_SPI_Init()
+   5           {
+   6   1         SPI_CS = 1;
+   7   1         SPI_CLK = 0;
+   8   1         SPI_MISO = 1;
+   9   1       }
+  10           void Soft_SPI_write(unsigned char b)
+  11           {
+  12   1         unsigned int i;
+  13   1         for(i=0;i<8;i++)
+  14   1         {
+  15   2           if(b&0x80==1)
+  16   2                 SPI_MOSI=1;
+  17   2               else 
+  18   2                 SPI_MOSI=0;
+  19   2               SPI_CLK = 1;
+  20   2               SPI_CLK = 0;
+  21   2         }
+  22   1       }
+  23           void main()
+  24           {
+  25   1         Soft_SPI_Init();
+  26   1         while(1)
+  27   1         {
+  28   2           Soft_SPI_write(0xAA);
+  29   2               delay(20);  
+  30   2         }
+  31   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     47    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

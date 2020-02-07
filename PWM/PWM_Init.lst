@@ -1,0 +1,88 @@
+C51 COMPILER V9.01   PWM_INIT                                                              09/02/2018 00:21:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE PWM_INIT
+OBJECT MODULE PLACED IN .\PWM_Init.obj
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE ..\library\PWM_Init.c OMF2 BROWSE DEBUG PRINT(.\PWM_Init.lst) OBJECT(.\PW
+                    -M_Init.obj)
+
+line level    source
+
+   1           #include <main.h>
+   2           #include <E:\file Keil C\AT89S52\library\PWM.h>
+   3           
+   4           
+   5          
+   6           
+   7           void PWM_START()
+   8           {
+   9   1         TR0 = 1;
+  10   1       }
+  11            void PWM_START()
+  12           {
+  13   1         TR0 = 1;                                           
+  14   1       }
+*** ERROR C237 IN LINE 14 OF ..\LIBRARY\PWM_INIT.C: 'PWM_START': function already has a body
+  15           void PWM_STOP()
+  16           {
+  17   1         TR0 = 0;
+  18   1       }
+  19           void PWM_set_duty(unsigned char duty )
+  20           {
+  21   1         if(duty==0)
+  22   1         {
+  23   2           PWM_PIN = 0;
+  24   2               ET0 = 0;
+  25   2         }
+  26   1         else 
+  27   1         if (duty == 100)
+  28   1         {
+  29   2           PWM_PIN = 1;
+  30   2               ET0 = 0;
+  31   2         }
+  32   1         else
+  33   1         {
+  34   2         Ton = (unsigned long)T*duty/100;
+*** ERROR C202 IN LINE 34 OF ..\LIBRARY\PWM_INIT.C: 'Ton': undefined identifier
+  35   2         Toff = T-Ton;
+*** ERROR C202 IN LINE 35 OF ..\LIBRARY\PWM_INIT.C: 'Toff': undefined identifier
+  36   2      
+  37   2         Ton_h_reload = (65536-Ton)>>8;
+*** ERROR C202 IN LINE 37 OF ..\LIBRARY\PWM_INIT.C: 'Ton_h_reload': undefined identifier
+  38   2         Ton_l_reload = (65536-Ton)&0x00FF;
+*** ERROR C202 IN LINE 38 OF ..\LIBRARY\PWM_INIT.C: 'Ton_l_reload': undefined identifier
+  39   2      
+  40   2         Toff_h_reload = (65536-Toff)>>8;
+*** ERROR C202 IN LINE 40 OF ..\LIBRARY\PWM_INIT.C: 'Toff_h_reload': undefined identifier
+  41   2         Toff_l_reload = (65536-Toff)&0x00FF;
+*** ERROR C202 IN LINE 41 OF ..\LIBRARY\PWM_INIT.C: 'Toff_l_reload': undefined identifier
+  42   2      
+  43   2         ET0 = 1;
+  44   2         }
+  45   1        d timer0Overlow() interrupt 1
+*** ERROR C202 IN LINE 45 OF ..\LIBRARY\PWM_INIT.C: 'd': undefined identifier
+*** ERROR C141 IN LINE 45 OF ..\LIBRARY\PWM_INIT.C: syntax error near 'timer0Overlow'
+C51 COMPILER V9.01   PWM_INIT                                                              09/02/2018 00:21:54 PAGE 2   
+
+*** ERROR C141 IN LINE 45 OF ..\LIBRARY\PWM_INIT.C: syntax error near 'interrupt'
+  46   1       {
+*** ERROR C141 IN LINE 46 OF ..\LIBRARY\PWM_INIT.C: syntax error near '{'
+  47   2         PWM_PIN = !PWM_PIN;
+  48   2         if(PWM_PIN==0)
+  49   2         {
+  50   3           TH0 = Toff_h_reload;
+*** ERROR C202 IN LINE 50 OF ..\LIBRARY\PWM_INIT.C: 'Toff_h_reload': undefined identifier
+  51   3           TL0 = Toff_l_reload;
+*** ERROR C202 IN LINE 51 OF ..\LIBRARY\PWM_INIT.C: 'Toff_l_reload': undefined identifier
+  52   3         }
+  53   2         else
+  54   2         {
+  55   3           TH0 = Ton_h_reload;
+*** ERROR C202 IN LINE 55 OF ..\LIBRARY\PWM_INIT.C: 'Ton_h_reload': undefined identifier
+  56   3           TL0 = Ton_l_reload;
+*** ERROR C202 IN LINE 56 OF ..\LIBRARY\PWM_INIT.C: 'Ton_l_reload': undefined identifier
+  57   3         }
+  58   2       }
+*** ERROR C141 IN LINE 58 OF ..\LIBRARY\PWM_INIT.C: syntax error near ''
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  16 ERROR(S)

@@ -1,0 +1,4 @@
+"IC_7447.obj",
+".\delay.obj" 
+TO "IC_7447" 
+RAMSIZE(256) 

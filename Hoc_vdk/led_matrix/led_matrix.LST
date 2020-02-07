@@ -1,0 +1,51 @@
+C51 COMPILER V9.01   LED_MATRIX                                                            01/15/2019 21:54:26 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LED_MATRIX
+OBJECT MODULE PLACED IN led_matrix.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE led_matrix.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           #include <AT89x52.h>
+   2           
+   3           unsigned char TTCD, TTDC;
+   4           unsigned int i, j;
+   5           void delay(unsigned int time)
+   6           {
+   7   1         unsigned int x, y;
+   8   1         for(x=0;x<time;x++)
+   9   1         for(y=0;y<123;y++);
+  10   1       }                                                     
+  11           void main()
+  12           {
+  13   1         while(1)
+  14   1         {
+  15   2           TTCD = 0;
+  16   2               for(i=8;i>0;i--)
+  17   2               {
+  18   3                 TTDC = 0x01;
+  19   3                 for(j=0;j<i;j++)
+  20   3                 {
+  21   4                   P2 = TTCD|TTDC;
+  22   4                       delay(500);
+  23   4                       TTDC = TTDC << 1;
+  24   4                 }
+  25   3                 TTCD = P2;
+  26   3               }
+  27   2         }  
+  28   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    112    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

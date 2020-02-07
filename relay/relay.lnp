@@ -1,0 +1,4 @@
+"relay.obj",
+".\delay.obj" 
+TO "relay" 
+RAMSIZE(256) 

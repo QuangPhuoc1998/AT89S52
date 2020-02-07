@@ -1,0 +1,164 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\file Keil C\AT89S52\I2C\I2C.uvproj
+Project File Date:  11/29/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling I2C.c...
+compiling delay.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CINIT?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CSTART?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CSTOP?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_I2CSEND?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?I2C
+Program Size: data=9.0 xdata=0 code=166
+"I2C" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CINIT?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CSTART?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CSTOP?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_I2CSEND?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?I2C
+Program Size: data=9.0 xdata=0 code=166
+"I2C" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CINIT?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CSTART?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CSTOP?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_I2CSEND?I2C
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?I2C
+Program Size: data=9.0 xdata=0 code=166
+"I2C" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+compiling delay.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=56
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=56
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=56
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+I2C.C(85): error C141: syntax error near 'I2CStart'
+I2C.C(86): error C141: syntax error near 'while'
+Target not created
+Build target 'Target 1'
+compiling I2C.c...
+I2C.C(85): error C141: syntax error near 'I2CStart'
+I2C.C(86): error C141: syntax error near 'while'
+Target not created
+Build target 'Target 1'
+compiling I2C.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=113
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=113
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=113
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=113
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=125
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=125
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=137
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=137
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=56
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=56
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling I2C.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=96
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=96
+creating hex file from "I2C"...
+"I2C" - 0 Error(s), 0 Warning(s).

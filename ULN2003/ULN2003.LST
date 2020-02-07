@@ -1,0 +1,99 @@
+C51 COMPILER V9.01   ULN2003                                                               01/15/2019 11:39:13 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE ULN2003
+OBJECT MODULE PLACED IN ULN2003.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE ULN2003.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1          #include <main.h>
+   2          #include <..\library\delay.h>
+   3          
+   4          unsigned char full_drive_right[4] = {0x09,0x0C, 0x06, 0x03};
+   5          unsigned char full_drive_left[4] = {0x03,0x06, 0x0C, 0x09};
+   6          unsigned int x, t;
+   7          void delay_ms(unsigned int t);
+   8          void stepper_motor_right();
+   9          void stepper_motor_left();
+  10          void main()
+  11          {
+  12   1        while(1)
+  13   1        {
+  14   2          if(BTN_right == 0)
+  15   2              {
+  16   3                while(BTN_right == 0);
+  17   3                stepper_motor_right();
+  18   3              }
+  19   2              if(BTN_left == 0)
+  20   2              {
+  21   3                while(BTN_left == 0);
+  22   3                stepper_motor_left();
+  23   3              }
+  24   2        }
+  25   1      }
+  26          void delay_ms(unsigned int t)
+  27          {
+  28   1        for(x=0;x<t;x++)
+  29   1        {
+  30   2              TMOD = 0x01;
+  31   2              TF0 = 0;
+  32   2              TH0 = 0xFC;
+  33   2              TL0 = 0x18;
+  34   2              TR0 = 1;
+  35   2              while(!TF0);
+  36   2              TR0 = 0;
+  37   2              TF0 = 0;
+  38   2        }
+  39   1      }
+  40          void stepper_motor_right()
+  41          {
+  42   1         while(1)
+  43   1         {
+  44   2           for(t=0;t<4;t++)
+  45   2               {
+  46   3                 step_motor = full_drive_right[t];
+  47   3                 delay_ms(50);
+  48   3                 if(BTN_left == 0)
+  49   3               {
+  50   4                while(BTN_left == 0);
+  51   4                stepper_motor_left();
+  52   4               } 
+  53   3               }
+  54   2               }  
+  55   1      }
+C51 COMPILER V9.01   ULN2003                                                               01/15/2019 11:39:13 PAGE 2   
+
+  56          void stepper_motor_left()
+  57          {       while(1)
+  58   1         {
+  59   2           for(t=0;t<4;t++)
+  60   2               {
+  61   3                 step_motor = full_drive_left[t];
+  62   3                 delay_ms(50);
+  63   3                 if(BTN_right == 0)
+  64   3              {
+  65   4                while(BTN_right == 0);
+  66   4                stepper_motor_right();
+  67   4              } 
+  68   3               }
+  69   2         }
+  70   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    151    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     12    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

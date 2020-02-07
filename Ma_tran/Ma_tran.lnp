@@ -1,0 +1,7 @@
+"Ma_tran.obj",
+".\delay.obj" 
+TO "Ma_tran" 
+RAMSIZE(256) 
+
+
+

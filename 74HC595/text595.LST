@@ -1,0 +1,66 @@
+C51 COMPILER V9.01   TEXT595                                                               12/29/2019 10:18:41 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TEXT595
+OBJECT MODULE PLACED IN text595.OBJ
+COMPILER INVOKED BY: D:\PROGRAM\Keil4_MinhHaGroup.Com_2 (1)\C51\BIN\C51.EXE text595.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1           #include <main.h>
+   2           #include "..\library\delay.h"
+   3           unsigned char i;
+   4           void HC595(unsigned char *p, unsigned char n);
+   5           void main()
+   6           {
+   7   1         unsigned char buffer[2];
+   8   1         while(1)
+   9   1         {
+  10   2           for(i=0;i<2;i++)
+  11   2               {
+  12   3                 buffer[i] = 0;
+  13   3               }
+  14   2               HC595(buffer,2);
+  15   2               delay(500);
+  16   2               for(i=0;i<2;i++)
+  17   2               {
+  18   3                 buffer[i] = 0xFF;
+  19   3               }  
+  20   2               HC595(buffer,2);
+  21   2               delay(500);
+  22   2         }
+  23   1       }
+  24           void HC595(unsigned char *p, unsigned char n)
+  25           {
+  26   1         unsigned char j,i,b;
+  27   1         for(j=0;j<n;j++)
+  28   1         {
+  29   2           b = *(p+n-j-1);
+  30   2               for(i=0;i<8;i++)
+  31   2               {
+  32   3                 DS = b&(0x80>>i);
+  33   3                 SHCP = 0;
+  34   3                 SHCP = 1;
+  35   3               }
+  36   2         }
+  37   1         STCP = 0;
+  38   1         STCP = 1;
+  39   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    158    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

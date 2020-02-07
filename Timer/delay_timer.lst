@@ -1,0 +1,36 @@
+C51 COMPILER V9.01   DELAY_TIMER                                                           08/18/2018 14:53:04 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE DELAY_TIMER
+OBJECT MODULE PLACED IN .\delay_timer.obj
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE ..\library\delay_timer.c BROWSE DEBUG OBJECTEXTEND PRINT(.\delay_timer.ls
+                    -t) OBJECT(.\delay_timer.obj)
+
+line level    source
+
+   1           #include <delay_timer.h>
+*** WARNING C318 IN LINE 1 OF ..\library\delay_timer.c: can't open file 'delay_timer.h'
+   2          
+   3           void delay_timer(unsigned int t)
+   4           {
+   5   1         TMOD = 0x01;
+*** ERROR C202 IN LINE 5 OF ..\LIBRARY\DELAY_TIMER.C: 'TMOD': undefined identifier
+   6   1         do
+   7   1         {
+   8   2           TL0 = 0x18;
+*** ERROR C202 IN LINE 8 OF ..\LIBRARY\DELAY_TIMER.C: 'TL0': undefined identifier
+   9   2               TH0 = 0xFC;
+*** ERROR C202 IN LINE 9 OF ..\LIBRARY\DELAY_TIMER.C: 'TH0': undefined identifier
+  10   2               TR0 = 1;
+*** ERROR C202 IN LINE 10 OF ..\LIBRARY\DELAY_TIMER.C: 'TR0': undefined identifier
+  11   2               while(!TF0);
+*** ERROR C202 IN LINE 11 OF ..\LIBRARY\DELAY_TIMER.C: 'TF0': undefined identifier
+  12   2               TF0 = 0;
+*** ERROR C202 IN LINE 12 OF ..\LIBRARY\DELAY_TIMER.C: 'TF0': undefined identifier
+  13   2               TR0 = 0;
+*** ERROR C202 IN LINE 13 OF ..\LIBRARY\DELAY_TIMER.C: 'TR0': undefined identifier
+  14   2               t--;
+  15   2         }  while(t!=0);
+  16   1       }
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  7 ERROR(S)

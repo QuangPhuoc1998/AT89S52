@@ -1,0 +1,4 @@
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 

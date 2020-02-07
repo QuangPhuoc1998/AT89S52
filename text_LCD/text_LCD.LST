@@ -1,0 +1,148 @@
+C51 COMPILER V9.01   TEXT_LCD                                                              02/18/2019 17:56:08 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TEXT_LCD
+OBJECT MODULE PLACED IN text_LCD.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE text_LCD.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1           #include <main.h>
+   2           #include "..\library\delay.h"
+   3           #include "..\library\LCD4.h"
+   4          
+   5          
+   6          //  Init()Lcd_;
+   7          //   Lcd_Cmd(_LCD_4BIT_2LINE_5x7FONT);
+   8          //   P2 = 0xAA;
+   9          //   Lcd_Out(1,1,"PHAM QUANG PHUOC");   
+  10          //   while(1)
+  11          //   { 
+  12          //       
+  13          //       delay(500);
+  14          //   }
+  15             unsigned int i;
+  16             unsigned char code_1[12] = {'*','*','*',' ', 'h','i','h','i',' ','*','*','*'};
+  17             unsigned char code_2[15] = {'*','*','*',' ', 'C','h','a','o', ' ','B','e',' ','*','*','*'};
+  18             unsigned char code_3[16] = {'N','G','U','Y', 'E','N',' ','M', 'A','I',' ','Q','U','Y','E','N'};
+  19             unsigned char code_4[13] = {'<','<','B','e',' ','R','a','t',' ','L','a','>','>'};
+  20             unsigned char code_5[15] = {'_','_',' ','N','h','u','n','g',' ','l','a','i',' ','_','_',};
+  21          
+  22           
+  23          
+  24           void main()
+  25           {
+  26   1         Lcd_Init();
+  27   1         
+  28   1         
+  29   1      
+  30   1      
+  31   1         while(1)
+  32   1         {
+  33   2           // hihi
+  34   2           Lcd_Chr(1,3,'*');
+  35   2           for(i=1;i<12;i++)
+  36   2               {
+  37   3                 delay(70);
+  38   3                 Lcd_Chr_Cp(code_1[i]);  
+  39   3               }
+  40   2               delay(500);
+  41   2               Lcd_Cmd(_LCD_CLEAR);
+  42   2               // chao be
+  43   2           for(i=0;i<15;i++)
+  44   2               {
+  45   3                 delay(150);
+  46   3                 Lcd_Chr_Cp(code_2[i]);  
+  47   3               }
+  48   2               delay(200);
+  49   2              // NGUYEN MAI QUYEN
+  50   2               Lcd_Chr(2,1,'N');
+  51   2           for(i=1;i<16;i++)
+  52   2               {
+  53   3                 delay(100);
+  54   3                 Lcd_Chr_Cp(code_3[i]);  
+  55   3               }
+C51 COMPILER V9.01   TEXT_LCD                                                              02/18/2019 17:56:08 PAGE 2   
+
+  56   2               delay(500);
+  57   2               Lcd_Cmd(_LCD_CLEAR);
+  58   2               // be con o do khong ta
+  59   2               for(i=0;i<13;i++)
+  60   2         {
+  61   3           Lcd_Out(1,1,"* Be Con o do *");
+  62   3           Lcd_Out(2,16-i,"Khong ta");
+  63   3               delay(100);
+  64   3               if(i==12); else Lcd_Cmd(_LCD_CLEAR);
+  65   3         }
+  66   2         delay(500);
+  67   2         Lcd_Cmd(_LCD_CLEAR);
+  68   2              // be ra la
+  69   2              Lcd_Chr(1,1,'<');
+  70   2         for(i=1;i<13;i++)
+  71   2         {
+  72   3           delay(150);
+  73   3               Lcd_Chr_Cp(code_4[i]);
+  74   3         }
+  75   2         delay(100);
+  76   2         Lcd_Chr(2,1,'=');
+  77   2         for(i=0;i<15;i++)
+  78   2         {
+  79   3           if(i==14) Lcd_Chr_Cp('>'); else Lcd_Chr_Cp('=');
+  80   3               delay(100);
+  81   3         }
+  82   2         delay(200);
+  83   2         Lcd_Cmd(_LCD_CLEAR);
+  84   2         // NHong nheo de thuong
+  85   2         Lcd_Out_Cp("Nhong nheo");
+  86   2         delay(200);
+  87   2         Lcd_Out_Cp(" (*_*))");
+  88   2         delay(700);
+  89   2      
+  90   2         Lcd_Out(2,1,"(~_~)  ");
+  91   2         delay(200);
+  92   2         Lcd_Out_Cp(" Kho chiu");
+  93   2         delay(1000);
+  94   2         Lcd_Cmd(_LCD_CLEAR);
+  95   2         // dt
+  96   2         for(i=0;i<15;i++)
+  97   2         {
+  98   3           Lcd_Chr_Cp(code_5[i]);
+  99   3               delay(100);
+ 100   3         }
+ 101   2         delay(300);
+ 102   2         Lcd_Out(2,1,"RAT DE THUONG S2");
+ 103   2         delay(1500);
+ 104   2         Lcd_Cmd(_LCD_CLEAR);
+ 105   2         // IU
+ 106   2         Lcd_Out_Cp(" IU CON BE CON");
+ 107   2         delay(500);
+ 108   2         Lcd_Out(2,3,"S2");
+ 109   2         for(i=0;i<4;i++)
+ 110   2         {
+ 111   3           delay(200);
+ 112   3               if(i==1) Lcd_Out_Cp("(^_^)"); else Lcd_Out_Cp("S2"); 
+ 113   3         }
+ 114   2         delay(5000);
+ 115   2         Lcd_Cmd(_LCD_CLEAR);
+ 116   2         }
+ 117   1       }
+C51 COMPILER V9.01   TEXT_LCD                                                              02/18/2019 17:56:08 PAGE 3   
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    618    ----
+   CONSTANT SIZE    =    103    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     73    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

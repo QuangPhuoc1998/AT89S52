@@ -1,0 +1,4 @@
+"LED7.obj",
+".\delay.obj" 
+TO "LED7" 
+RAMSIZE(256) 

@@ -1,0 +1,54 @@
+C51 COMPILER V9.01   QUET_2_LED_7                                                          07/06/2018 23:50:18 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE QUET_2_LED_7
+OBJECT MODULE PLACED IN Quet_2_LED_7.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE Quet_2_LED_7.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1            #include <main.h>
+   2            #include "..\library\delay.h"
+   3          
+   4            unsigned char code code7seg[10] = { 0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90}; 
+   5          
+   6            void main()
+   7            {
+   8   1          unsigned char dem, chuc, donvi;
+   9   1              unsigned int i;
+  10   1              while(1)
+  11   1              {
+  12   2                for(dem = 0; dem < 100 ; dem++)
+  13   2                {
+  14   3                      donvi = dem%10;
+  15   3                              chuc = dem/10;
+  16   3      
+  17   3                              for(i = 0 ; i < 500 ; i++)
+  18   3                              {
+  19   4                                 LED_PORT = code7seg[donvi];
+  20   4                                 LED2 = 0;
+  21   4                                 delay(1);
+  22   4                                 LED2 = 1;
+  23   4      
+  24   4                                 LED_PORT = code7seg[chuc];
+  25   4                                 LED1 = 0;
+  26   4                                 delay(1);
+  27   4                                 LED1 = 1;
+  28   4                              }
+  29   3                }
+  30   2              }
+  31   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     91    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

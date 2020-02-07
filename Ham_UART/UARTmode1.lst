@@ -1,0 +1,77 @@
+C51 COMPILER V9.01   UARTMODE1                                                             09/01/2018 23:51:13 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE UARTMODE1
+OBJECT MODULE PLACED IN .\UARTmode1.obj
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE ..\library\UARTmode1.c OMF2 BROWSE DEBUG PRINT(.\UARTmode1.lst) OBJECT(.\
+                    -UARTmode1.obj)
+
+line level    source
+
+   1           #include "main.h"
+   2           #include "..\library\UARTmode1.h"
+   3          
+   4            #if(FREQ_OSC!= 11059200ul)
+                   #error "thu vien chi ho tro thach an 11059200ul "
+                #endif
+   7            
+   8            void UART_Init()         // cai dat toc do baud
+   9           {
+  10   1          SM0 = 0;
+  11   1          SM1 = 1;
+  12   1              TMOD &= 0x0F;
+  13   1          TMOD |= 0x20;   // timer 1 hoat dong co che do 8 bit auto load
+  14   1              #if(BAUD_RATE==9600)
+  15   1              TH1 = 0xFD;        // toc do boad = 9600
+  16   1              #elif(BAUD_RATE==2400)
+                      TH1 = 0xF4;
+                              #elif(BAUD_RATE==1200)
+                      TH1 = 0xE8;
+                              #elif(BAUD_RATE==19200)
+                      TH1 = 0xFD;
+                      PCON |= 0x80;
+                      #else 
+                           #error "toc do baud chi co the la 1 trong 4 so 19200, 9600, 2400, 1200"
+                      #endif
+  26   1              TR1 = 1; 
+  27   1              REN = 1;
+  28   1          TI = 1; // san sang gui du lieu
+  29   1      //      REN = 1;   // cho phep nhan du lieu
+  30   1       }
+  31          
+  32           void UART_write(char c)
+  33           {
+  34   1         while(TI == 0); // neu viec gui ki tu truoc do chua hoan tat thi cho
+  35   1         TI = 0;
+  36   1         SBUF = c;
+  37   1       }
+  38            char UART_Data_really()
+  39           {
+  40   1         return RI; // RI = 0 => chua nhan dc dl, RI = 1 => da nhan dc du lieu
+  41   1       }
+  42           char UART_read()
+  43           {
+  44   1         RI = 0;
+  45   1         return SBUF;  
+  46   1       }
+  47          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     39    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   UARTMODE1                                                             09/01/2018 23:51:13 PAGE 2   
+
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

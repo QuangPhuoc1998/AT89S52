@@ -1,0 +1,4 @@
+"delay.obj",
+"SPI_vdk1.obj" 
+TO "SPI_vdk1" 
+RAMSIZE(256) 

@@ -1,0 +1,4 @@
+"delay.obj",
+"led_cube_3x3.obj" 
+TO "led_cube_3x3" 
+RAMSIZE(256) 

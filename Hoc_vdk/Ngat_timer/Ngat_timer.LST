@@ -1,0 +1,62 @@
+C51 COMPILER V9.01   NGAT_TIMER                                                            09/26/2018 09:58:13 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE NGAT_TIMER
+OBJECT MODULE PLACED IN Ngat_timer.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE Ngat_timer.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1           #include <main.h>
+   2           #include <E:\file Keil C\AT89S52\library\delay.h>
+   3           int cnt = 5;
+   4           int i;
+   5           void main()
+   6           {
+   7   1         TMOD &= 0xF0;
+   8   1         TMOD |= 0x01;
+   9   1         TL0 = 0xB0;
+  10   1         TH0 = 0x3C;
+  11   1         ET0 = 1;
+  12   1         EA = 1;
+  13   1         TR0 = 1;
+  14   1         while(1)
+  15   1         {
+  16   2           P1 = 0xFE;
+  17   2           for(i = 0; i < 8; i++)
+  18   2               {
+  19   3                 delay(250);
+  20   3                 P1 = P1 << 1|1;
+  21   3               } 
+  22   2         }
+  23   1       }
+  24           void ngat() interrupt 1
+  25           {
+  26   1          TL0 = 0xB0;
+  27   1          TH0 = 0x3C;
+  28   1              cnt--;
+  29   1              if(cnt==0)
+  30   1              {
+  31   2                cnt = 5;
+  32   2                P3_7 = ~P3_7;
+  33   2              }
+  34   1      
+  35   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     97    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,60 @@
+C51 COMPILER V9.01   BTNVSQUETPHIM                                                         05/11/2018 02:11:58 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE BTNVSQUETPHIM
+OBJECT MODULE PLACED IN BTNvsquetphim.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE BTNvsquetphim.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1                   #include <main.h>
+   2                   #include "E:\file Keil C\AT89S52\library\delay.h"
+   3          
+   4                   #define LED P2
+   5                   sbit BTN_START = P1^0;
+   6                   sbit BTN_STOP = P1^1;
+   7          
+   8                   unsigned char delay1svaquetphim()
+   9                   { 
+  10   1                 unsigned int i;
+  11   1                 for( i = 0 ; i < 100 ; i++)
+  12   1                 {
+  13   2                   delay(10);
+  14   2                       if(BTN_STOP == 0)
+  15   2                       { 
+  16   3                         LED = 0xFF;
+  17   3                         return 1;
+  18   3                       }
+  19   2                 }
+  20   1                 return 0;
+  21   1               }
+  22                   void main()
+  23                   {
+  24   1                  LED = 0xFF;
+  25   1                      while(1)
+  26   1                      {  
+  27   2                         if(BTN_START == 0)
+  28   2                         while(1)
+  29   2                         { 
+  30   3                          LED = ~LED;
+  31   3                              if(delay1svaquetphim())
+  32   3                              {
+  33   4                               break;
+  34   4                              }
+  35   3                         }
+  36   2                      }
+  37   1               }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     58    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

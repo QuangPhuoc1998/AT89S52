@@ -1,0 +1,193 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/15/2019  13:02:40  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE counter.obj, .\delay.obj TO counter RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  counter.obj (COUNTER)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  counter (COUNTER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?COUNTER
+            DATA    0012H     0004H     UNIT         _DATA_GROUP_
+            IDATA   0016H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00B7H     UNIT         ?PR?_TIME_ON?COUNTER
+            CODE    00BAH     0055H     UNIT         ?C?LIB_CODE
+            CODE    010FH     002AH     UNIT         ?PR?MAIN?COUNTER
+            CODE    0139H     0023H     UNIT         ?PR?_DELAY_MS?COUNTER
+            CODE    015CH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    017CH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0188H     000AH     UNIT         ?CO?COUNTER
+
+
+
+OVERLAY MAP OF MODULE:   counter (COUNTER)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?COUNTER
+
+?PR?MAIN?COUNTER               0012H    0004H
+  +--> ?PR?_TIME_ON?COUNTER
+
+?PR?_TIME_ON?COUNTER           -----    -----
+  +--> ?CO?COUNTER
+  +--> ?PR?_DELAY_MS?COUNTER
+
+
+
+SYMBOL TABLE OF MODULE:  counter (COUNTER)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/15/2019  13:02:40  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        COUNTER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A0H.2       PUBLIC        L3
+  B:00A0H.3       PUBLIC        L4
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0188H         PUBLIC        code7seg
+  D:0008H         PUBLIC        nghin
+  D:000AH         PUBLIC        donvi
+  D:000CH         PUBLIC        chuc
+  C:010FH         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  D:000EH         PUBLIC        tram
+  D:0010H         PUBLIC        dem
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  C:0139H         PUBLIC        _delay_ms
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  C:0003H         PUBLIC        _time_on
+  B:00A0H.0       PUBLIC        L1
+  B:00A0H.1       PUBLIC        L2
+  -------         PROC          MAIN
+  -------         DO            
+  D:0012H         SYMBOL        high
+  D:0013H         SYMBOL        low
+  D:0014H         SYMBOL        number
+  -------         ENDDO         
+  C:010FH         LINE#         9
+  C:010FH         LINE#         10
+  C:010FH         LINE#         13
+  C:0112H         LINE#         14
+  C:0114H         LINE#         15
+  C:0114H         LINE#         16
+  C:0114H         LINE#         18
+  C:0114H         LINE#         19
+  C:0117H         LINE#         20
+  C:011AH         LINE#         21
+  C:011FH         LINE#         22
+  C:0124H         LINE#         23
+  C:012BH         LINE#         24
+  C:0130H         LINE#         25
+  C:0137H         LINE#         26
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  -------         ENDDO         
+  C:0139H         LINE#         28
+  C:0139H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/15/2019  13:02:40  PAGE 3
+
+
+  C:0139H         LINE#         31
+  C:0143H         LINE#         32
+  C:0143H         LINE#         33
+  C:0146H         LINE#         34
+  C:0149H         LINE#         35
+  C:014BH         LINE#         36
+  C:014DH         LINE#         37
+  C:0150H         LINE#         38
+  C:0152H         LINE#         39
+  C:0154H         LINE#         40
+  C:015BH         LINE#         41
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          _TIME_ON
+  D:0002H         SYMBOL        dem
+  C:0003H         LINE#         42
+  C:0007H         LINE#         43
+  C:0007H         LINE#         44
+  C:0012H         LINE#         45
+  C:002EH         LINE#         46
+  C:004AH         LINE#         47
+  C:0059H         LINE#         49
+  C:0069H         LINE#         50
+  C:006BH         LINE#         51
+  C:0072H         LINE#         52
+  C:0074H         LINE#         53
+  C:0084H         LINE#         54
+  C:0086H         LINE#         55
+  C:0089H         LINE#         56
+  C:008BH         LINE#         57
+  C:009BH         LINE#         58
+  C:009DH         LINE#         59
+  C:00A0H         LINE#         60
+  C:00A2H         LINE#         61
+  C:00B2H         LINE#         62
+  C:00B4H         LINE#         63
+  C:00B7H         LINE#         64
+  C:00B9H         LINE#         65
+  -------         ENDPROC       _TIME_ON
+  -------         ENDMOD        COUNTER
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:015CH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:015CH         LINE#         2
+  C:015CH         LINE#         3
+  C:015CH         LINE#         5
+  C:0166H         LINE#         6
+  C:017BH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/15/2019  13:02:40  PAGE 4
+
+
+  -------         MODULE        ?C?UIDIV
+  C:00BAH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+
+Program Size: data=23.0 xdata=0 code=402
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+"code led quay.obj",
+".\delay.obj" 
+TO "led_quay" 
+RAMSIZE(256) 

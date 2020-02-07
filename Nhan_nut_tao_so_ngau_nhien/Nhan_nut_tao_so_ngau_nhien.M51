@@ -1,0 +1,107 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/24/2018  23:04:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Nhan_nut_tao_so_ngau_nhien.obj, .\delay.obj TO Nhan_nut_tao_so_ngau_nhien RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Nhan_nut_tao_so_ngau_nhien.obj (NHAN_NUT_TAO_SO_NGAU_NHIEN)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Nhan_nut_tao_so_ngau_nhien (NHAN_NUT_TAO_SO_NGAU_NHIEN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0024H     UNIT         ?PR?MAIN?NHAN_NUT_TAO_SO_NGAU_NHIEN
+            CODE    0027H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0047H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0053H     000AH     UNIT         ?CO?NHAN_NUT_TAO_SO_NGAU_NHIEN
+
+
+
+OVERLAY MAP OF MODULE:   Nhan_nut_tao_so_ngau_nhien (NHAN_NUT_TAO_SO_NGAU_NHIEN)
+
+
+SEGMENT                                       DATA_GROUP 
+  +--> CALLED SEGMENT                       START    LENGTH
+-----------------------------------------------------------
+?C_C51STARTUP                               -----    -----
+  +--> ?PR?MAIN?NHAN_NUT_TAO_SO_NGAU_NHIEN
+
+?PR?MAIN?NHAN_NUT_TAO_SO_NGAU_NHIEN         0008H    0001H
+  +--> ?CO?NHAN_NUT_TAO_SO_NGAU_NHIEN
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Nhan_nut_tao_so_ngau_nhien (NHAN_NUT_TAO_SO_NGAU_NHIEN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NHAN_NUT_TAO_SO_NGAU_NHIEN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:0053H         PUBLIC        code7seg
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/24/2018  23:04:20  PAGE 2
+
+
+  C:0003H         PUBLIC        main
+  B:0090H.0       PUBLIC        BTN
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        dem
+  -------         ENDDO         
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0006H         LINE#         7
+  C:0006H         LINE#         8
+  C:0006H         LINE#         9
+  C:0009H         LINE#         10
+  C:0009H         LINE#         11
+  C:000CH         LINE#         12
+  C:000CH         LINE#         13
+  C:000EH         LINE#         14
+  C:0010H         LINE#         15
+  C:001EH         LINE#         16
+  C:0025H         LINE#         17
+  C:0025H         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        NHAN_NUT_TAO_SO_NGAU_NHIEN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0027H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0027H         LINE#         2
+  C:0027H         LINE#         3
+  C:0027H         LINE#         5
+  C:0031H         LINE#         6
+  C:0046H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=10.0 xdata=0 code=93
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

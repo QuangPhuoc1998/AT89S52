@@ -1,0 +1,116 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/06/2018  23:50:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Quet_2_LED_7.obj, .\delay.obj TO Quet_2_LED_7 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Quet_2_LED_7.obj (QUET_2_LED_7)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Quet_2_LED_7 (QUET_2_LED_7)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         _DATA_GROUP_
+            IDATA   000DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     005BH     UNIT         ?PR?MAIN?QUET_2_LED_7
+            CODE    005EH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    007EH     000CH     UNIT         ?C_C51STARTUP
+            CODE    008AH     000AH     UNIT         ?CO?QUET_2_LED_7
+
+
+
+OVERLAY MAP OF MODULE:   Quet_2_LED_7 (QUET_2_LED_7)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?QUET_2_LED_7
+
+?PR?MAIN?QUET_2_LED_7          0008H    0005H
+  +--> ?CO?QUET_2_LED_7
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Quet_2_LED_7 (QUET_2_LED_7)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        QUET_2_LED_7
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.0       PUBLIC        LED1
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/06/2018  23:50:18  PAGE 2
+
+
+  B:00A0H.1       PUBLIC        LED2
+  C:008AH         PUBLIC        code7seg
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        dem
+  D:0009H         SYMBOL        chuc
+  D:000AH         SYMBOL        donvi
+  D:000BH         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         6
+  C:0003H         LINE#         7
+  C:0003H         LINE#         10
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:0006H         LINE#         13
+  C:0006H         LINE#         14
+  C:000FH         LINE#         15
+  C:0017H         LINE#         17
+  C:001CH         LINE#         18
+  C:001CH         LINE#         19
+  C:0024H         LINE#         20
+  C:0026H         LINE#         21
+  C:002DH         LINE#         22
+  C:002FH         LINE#         24
+  C:0037H         LINE#         25
+  C:0039H         LINE#         26
+  C:0040H         LINE#         27
+  C:0042H         LINE#         28
+  C:0053H         LINE#         29
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        QUET_2_LED_7
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:005EH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:005EH         LINE#         2
+  C:005EH         LINE#         3
+  C:005EH         LINE#         5
+  C:0068H         LINE#         6
+  C:007DH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=14.0 xdata=0 code=148
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

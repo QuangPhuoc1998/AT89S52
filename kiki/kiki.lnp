@@ -1,0 +1,4 @@
+"kiki.obj",
+"delay.obj" 
+TO "kiki" 
+RAMSIZE(256) 

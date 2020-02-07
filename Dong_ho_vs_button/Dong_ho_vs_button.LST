@@ -1,0 +1,120 @@
+C51 COMPILER V9.01   DONG_HO_VS_BUTTON                                                     07/25/2018 00:54:25 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE DONG_HO_VS_BUTTON
+OBJECT MODULE PLACED IN Dong_ho_vs_button.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE Dong_ho_vs_button.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1            #include "main.h"
+   2            #include "..\library\delay.h"
+   3          
+   4            unsigned char code code7seg[10] = { 0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90}; 
+   5            unsigned char giay = 0;
+   6            unsigned char phut = 0;
+   7            unsigned char chuc, donvi;
+   8            unsigned int i;
+   9          
+  10            void TIME_ON()
+  11            {
+  12   1                      chuc= phut/10;
+  13   1                              donvi= phut%10;
+  14   1      
+  15   1                              LED_PORT = code7seg[chuc];
+  16   1                              phutchuc = 1;
+  17   1                              delay(1);
+  18   1                              phutchuc = 0;
+  19   1      
+  20   1                              LED_PORT = code7seg[donvi];
+  21   1                              phutdonvi = 1;
+  22   1                              delay(1);
+  23   1                          phutdonvi = 0;
+  24   1      
+  25   1                              chuc=giay/10;
+  26   1                              donvi=giay%10;
+  27   1      
+  28   1                              LED_PORT = code7seg[chuc];
+  29   1                              giaychuc = 0;
+  30   1                              delay(1);
+  31   1                              giaychuc = 1;
+  32   1      
+  33   1                              LED_PORT = code7seg[donvi];
+  34   1                              giaydonvi = 0;
+  35   1                              delay(1);
+  36   1                          giaydonvi = 1;
+  37   1        }
+  38            void main()
+  39            {
+  40   1          
+  41   1              while(1)
+  42   1                        {
+  43   2                              TIME_ON();
+  44   2      
+  45   2                                      if(BTN_UP == 0) 
+  46   2                                      {
+  47   3                                        while(BTN_UP==0)
+  48   3                                        {
+  49   4                                              TIME_ON();
+  50   4                                        }
+  51   3                                        if(phut==59) phut=0;
+  52   3                                        else phut++;
+  53   3                                      }
+  54   2                                      if(BTN_DOWN == 0) 
+  55   2                                      {
+C51 COMPILER V9.01   DONG_HO_VS_BUTTON                                                     07/25/2018 00:54:25 PAGE 2   
+
+  56   3                                        while(BTN_DOWN==0)
+  57   3                                        {
+  58   4                                              TIME_ON();
+  59   4                                        }
+  60   3                                        if(phut==0) phut=59;
+  61   3                                        else phut--;
+  62   3                                      }
+  63   2                                      if(BTN_START==0) break;
+  64   2                         }
+  65   1          while(1)
+  66   1              {   
+  67   2                 while(phut>0 || giay >0)
+  68   2                 {
+  69   3                   for(i=0;i<250;i++)
+  70   3                       {
+  71   4                         TIME_ON();
+  72   4                       }
+  73   3                       if(giay==0) 
+  74   3                       {
+  75   4                         giay=59;
+  76   4                         phut--;
+  77   4                       } else 
+  78   3                       {
+  79   4                         giay--;
+  80   4                       }
+  81   3                 }
+  82   2                   LED_PORT = code7seg[0];
+  83   2                   phutchuc = 0;
+  84   2                       phutdonvi = 0;
+  85   2                       LED_PORT = code7seg[0];
+  86   2                       giaychuc = 0;
+  87   2                       giaydonvi = 0;
+  88   2                 LED = 0;
+  89   2                 if(BTN_STOP==0) 
+  90   2                 {
+  91   3                  LED = 1;
+  92   3                  break;
+  93   3                 }      
+  94   2              }
+  95   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    241    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

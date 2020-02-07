@@ -1,0 +1,132 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/28/2018  10:38:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE LED7.obj, .\delay.obj TO LED7 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  LED7.obj (LED7)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  LED7 (LED7)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0096H     UNIT         ?PR?MAIN?LED7
+            CODE    0099H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    00B9H     000CH     UNIT         ?C_C51STARTUP
+            CODE    00C5H     000AH     UNIT         ?CO?LED7
+
+
+
+OVERLAY MAP OF MODULE:   LED7 (LED7)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?LED7
+
+?PR?MAIN?LED7                  0008H    0001H
+  +--> ?CO?LED7
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  LED7 (LED7)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LED7
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/28/2018  10:38:08  PAGE 2
+
+
+  D:00B0H         PUBLIC        P3
+  B:0080H.0       PUBLIC        dendo
+  C:00C5H         PUBLIC        code7seg
+  C:0003H         PUBLIC        main
+  B:0080H.2       PUBLIC        denvang
+  B:0080H.1       PUBLIC        denxanh
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:0003H         LINE#         14
+  C:0005H         LINE#         15
+  C:0007H         LINE#         16
+  C:0009H         LINE#         18
+  C:000CH         LINE#         19
+  C:000CH         LINE#         20
+  C:0018H         LINE#         21
+  C:0023H         LINE#         22
+  C:002AH         LINE#         23
+  C:0033H         LINE#         26
+  C:0035H         LINE#         27
+  C:0037H         LINE#         28
+  C:0039H         LINE#         30
+  C:003CH         LINE#         31
+  C:003CH         LINE#         32
+  C:0048H         LINE#         33
+  C:0053H         LINE#         34
+  C:005AH         LINE#         35
+  C:0063H         LINE#         38
+  C:0065H         LINE#         39
+  C:0067H         LINE#         40
+  C:0069H         LINE#         42
+  C:006CH         LINE#         43
+  C:006CH         LINE#         44
+  C:0078H         LINE#         45
+  C:0083H         LINE#         46
+  C:008AH         LINE#         47
+  C:0093H         LINE#         48
+  C:0096H         LINE#         50
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LED7
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0099H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0099H         LINE#         2
+  C:0099H         LINE#         3
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/28/2018  10:38:08  PAGE 3
+
+
+  C:0099H         LINE#         5
+  C:00A3H         LINE#         6
+  C:00B8H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=10.0 xdata=0 code=207
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

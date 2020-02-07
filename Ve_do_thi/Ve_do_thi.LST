@@ -1,0 +1,44 @@
+C51 COMPILER V9.01   VE_DO_THI                                                             04/03/2019 21:41:26 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE VE_DO_THI
+OBJECT MODULE PLACED IN Ve_do_thi.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE Ve_do_thi.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           #include "main.h"
+   2           #include "delay.h"
+   3           #include "stdio.h"
+   4          
+   5           void main()
+   6           {
+   7   1         unsigned char c;
+   8   1         SCON = 0x50; //0101000
+   9   1         TMOD = 0x20; //8 bit auto load
+  10   1         TH1 = 0xFD; // Baudrate 9600
+  11   1         TR1 = 1;     // bat dau time 1
+  12   1         TI = 1; // sang sang gui du lieu
+  13   1         while(1)
+  14   1         {
+  15   2           for(c=0;c<255;c++)
+  16   2               {
+  17   3                 putchar(c);
+  18   3                 delay(100);
+  19   3               }
+  20   2         }
+  21   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     39    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

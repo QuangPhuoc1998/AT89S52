@@ -1,0 +1,4 @@
+"xung_vuong.obj",
+".\delay.obj" 
+TO "xung_vuong" 
+RAMSIZE(256) 

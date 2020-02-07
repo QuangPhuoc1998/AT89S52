@@ -1,0 +1,112 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/03/2019  21:41:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE delay.obj, Ve_do_thi.obj TO Ve_do_thi RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  delay.obj (DELAY)
+  Ve_do_thi.obj (VE_DO_THI)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  Ve_do_thi (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0027H     UNIT         ?PR?MAIN?VE_DO_THI
+            CODE    002AH     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    0051H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0071H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Ve_do_thi (DELAY)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?VE_DO_THI
+
+?PR?MAIN?VE_DO_THI             0008H    0001H
+  +--> ?PR?PUTCHAR?PUTCHAR
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Ve_do_thi (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0051H         PUBLIC        _delay
+  -------         PROC          _DELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/03/2019  21:41:26  PAGE 2
+
+
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0051H         LINE#         2
+  C:0051H         LINE#         3
+  C:0051H         LINE#         5
+  C:005BH         LINE#         6
+  C:0070H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        VE_DO_THI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:0098H.1       PUBLIC        TI
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        c
+  -------         ENDDO         
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0003H         LINE#         8
+  C:0006H         LINE#         9
+  C:0009H         LINE#         10
+  C:000CH         LINE#         11
+  C:000EH         LINE#         12
+  C:0010H         LINE#         13
+  C:0010H         LINE#         14
+  C:0010H         LINE#         15
+  C:0013H         LINE#         16
+  C:0013H         LINE#         17
+  C:0018H         LINE#         18
+  C:001FH         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        VE_DO_THI
+
+  -------         MODULE        PUTCHAR
+  C:002AH         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+Program Size: data=10.0 xdata=0 code=125
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

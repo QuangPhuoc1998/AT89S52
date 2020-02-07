@@ -1,0 +1,4 @@
+"A4988.obj",
+"delay.obj" 
+TO "A4988" 
+RAMSIZE(256) 

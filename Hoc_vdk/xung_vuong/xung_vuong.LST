@@ -1,0 +1,63 @@
+C51 COMPILER V9.01   XUNG_VUONG                                                            10/16/2018 19:28:43 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE XUNG_VUONG
+OBJECT MODULE PLACED IN xung_vuong.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE xung_vuong.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           #include <main.h>
+   2           #include <..\..\library\delay.h>
+   3           sbit PWM = P1^0;
+   4           unsigned int Ton, Toff;
+   5           void set_timer(unsigned int ck);
+   6           void main()
+   7           {
+   8   1         set_timer(100);
+   9   1         TR0 = 1;
+  10   1         while(1)
+  11   1         {
+  12   2           delay(1);
+  13   2         }
+  14   1       }
+  15           void set_timer(unsigned int ck)
+  16           {
+  17   1         unsigned int T;
+  18   1         PWM = 1;
+  19   1         TMOD = 0x01;
+  20   1         ET0 = 1;
+  21   1         EA = 1;
+  22   1         T = ck; 
+  23   1         Ton = T/2;
+  24   1         Toff = T/2;
+  25   1       }
+  26           void dao() interrupt 1 using 0
+  27           {
+  28   1         PWM = ~PWM;
+  29   1         if(PWM==1) 
+  30   1         {
+  31   2           TH0 = (65536-Ton)>>8;
+  32   2               TL0 = (65536-Ton)&0x00FF;
+  33   2         }
+  34   1         if(PWM==0)
+  35   1         {
+  36   2           TH0 = (65536-Toff)>>8;
+  37   2               TL0 = (65536-Toff)&0x00FF;
+  38   2         }
+  39   1          
+  40   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    180    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,6 @@
+"Ham_UART.obj",
+".\UARTmode1.obj",
+".\delay.obj" 
+TO "Ham_UART" 
+
+ru 

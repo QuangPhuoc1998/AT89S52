@@ -1,0 +1,39 @@
+C51 COMPILER V9.01   STEP_L298                                                             02/25/2019 17:40:10 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE STEP_L298
+OBJECT MODULE PLACED IN step_L298.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE step_L298.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <main.h>
+   2          #include <delay.h>
+   3          #define Step P0
+   4          unsigned char full_drive[4] = {0x09,0x0C, 0x06, 0x03};
+   5          void main()
+   6          {
+   7   1        unsigned int i;
+   8   1        while(1)
+   9   1        {
+  10   2          for(i=0;i<4;i++)
+  11   2              {
+  12   3                Step = full_drive[i];
+  13   3                delay(50); 
+  14   3              }  
+  15   2        }
+  16   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     39    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

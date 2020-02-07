@@ -1,0 +1,88 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/02/2018  00:13:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE UART_74HC165.obj, .\delay.obj TO UART_74HC165 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  UART_74HC165.obj (UART_74HC165)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  UART_74HC165 (UART_74HC165)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0023H     000CH     UNIT         ?C_C51STARTUP
+            CODE    002FH     0009H     UNIT         ?PR?MAIN?UART_74HC165
+
+
+
+OVERLAY MAP OF MODULE:   UART_74HC165 (UART_74HC165)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?UART_74HC165
+
+?PR?MAIN?UART_74HC165
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  UART_74HC165 (UART_74HC165)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        UART_74HC165
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:002FH         PUBLIC        main
+  -------         PROC          MAIN
+  C:002FH         LINE#         4
+  C:002FH         LINE#         5
+  C:002FH         LINE#         6
+  C:002FH         LINE#         7
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/02/2018  00:13:33  PAGE 2
+
+
+  C:002FH         LINE#         8
+  C:0036H         LINE#         9
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        UART_74HC165
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         5
+  C:000DH         LINE#         6
+  C:0022H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=9.0 xdata=0 code=56
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

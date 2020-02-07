@@ -1,0 +1,133 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/19/2018  21:51:49  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Ngat_timer.obj (NGAT_TIMER)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?LLDIIDATA)
+
+
+LINK MAP OF MODULE:  Ngat_timer (NGAT_TIMER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     003DH     UNIT         ?PR?NGAT?NGAT_TIMER
+            CODE    0043H     0021H     UNIT         ?PR?MAIN?NGAT_TIMER
+            CODE    0064H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0084H     0020H     UNIT         ?C?LIB_CODE
+            CODE    00A4H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Ngat_timer (NGAT_TIMER)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?PR?NGAT?NGAT_TIMER            0008H    0004H
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?NGAT_TIMER
+
+?PR?MAIN?NGAT_TIMER            -----    -----
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Ngat_timer (NGAT_TIMER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/19/2018  21:51:49  PAGE 2
+
+
+
+  -------         MODULE        NGAT_TIMER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  B:0090H.3       PUBLIC        P1_3
+  C:0043H         PUBLIC        main
+  C:0006H         PUBLIC        ngat
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          MAIN
+  C:0043H         LINE#         5
+  C:0043H         LINE#         6
+  C:0043H         LINE#         7
+  C:0046H         LINE#         8
+  C:0048H         LINE#         9
+  C:004AH         LINE#         10
+  C:004CH         LINE#         11
+  C:004EH         LINE#         12
+  C:004EH         LINE#         13
+  C:004EH         LINE#         14
+  C:0051H         LINE#         15
+  C:0058H         LINE#         16
+  C:005BH         LINE#         17
+  C:0062H         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         PROC          NGAT
+  -------         DO            
+  D:0008H         SYMBOL        a
+  -------         ENDDO         
+  C:0006H         LINE#         20
+  C:0017H         LINE#         22
+  C:0023H         LINE#         23
+  C:0025H         LINE#         24
+  C:0032H         LINE#         25
+  C:0034H         LINE#         26
+  -------         ENDPROC       NGAT
+  -------         ENDMOD        NGAT_TIMER
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0064H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0064H         LINE#         2
+  C:0064H         LINE#         3
+  C:0064H         LINE#         5
+  C:006EH         LINE#         6
+  C:0083H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/19/2018  21:51:49  PAGE 3
+
+
+
+  -------         MODULE        ?C?LLDIIDATA
+  C:008DH         PUBLIC        ?C?LLDIIDATA
+  C:0084H         PUBLIC        ?C?LLDIIDATA1
+  C:0086H         PUBLIC        ?C?LLDIIDATA8
+  -------         ENDMOD        ?C?LLDIIDATA
+
+Program Size: data=13.0 xdata=0 code=176
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

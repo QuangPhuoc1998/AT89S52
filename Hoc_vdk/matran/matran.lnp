@@ -1,0 +1,4 @@
+"matran.obj",
+".\delay.obj" 
+TO "matran" 
+RAMSIZE(256) 

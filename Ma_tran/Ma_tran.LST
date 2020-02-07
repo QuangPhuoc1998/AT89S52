@@ -1,0 +1,88 @@
+C51 COMPILER V9.01   MA_TRAN                                                               09/01/2018 23:50:38 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MA_TRAN
+OBJECT MODULE PLACED IN Ma_tran.OBJ
+COMPILER INVOKED BY: D:\keil c\C51\BIN\C51.EXE Ma_tran.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           #include "main.h"
+   2           #include "..\library\delay.h"
+   3           unsigned char code code7seg[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   4           
+   5           unsigned char donvi, chuc;
+   6           unsigned char KeyPress()
+   7           {
+   8   1         unsigned char key = 0;
+   9   1         Col1 = 0;
+  10   1         if(Cow1==0) key = 1;
+  11   1         if(Cow2==0) key = 2;
+  12   1         if(Cow3==0) key = 3;
+  13   1         if(Cow4==0) key = 4; 
+  14   1         Col1 = 1;
+  15   1      
+  16   1         Col2 = 0;
+  17   1         if(Cow1==0) key = 5;
+  18   1         if(Cow2==0) key = 6;
+  19   1         if(Cow3==0) key = 7;
+  20   1         if(Cow4==0) key = 8;
+  21   1         Col2 = 1;
+  22   1      
+  23   1         Col3 = 0;
+  24   1         if(Cow1==0) key = 9;
+  25   1         if(Cow2==0) key = 10;
+  26   1         if(Cow3==0) key = 11;
+  27   1         if(Cow4==0) key = 12;
+  28   1         Col3 = 1;
+  29   1      
+  30   1         Col4 = 0;
+  31   1         if(Cow1==0) key = 13;
+  32   1         if(Cow2==0) key = 14;
+  33   1         if(Cow3==0) key = 15;
+  34   1         if(Cow4==0) key = 16;
+  35   1         Col4 = 1;
+  36   1      
+  37   1         return key;
+  38   1       }
+  39          
+  40           void Time_on(unsigned char a)
+  41           {
+  42   1         chuc = a/10;
+  43   1         donvi = a%10;
+  44   1      
+  45   1         LED_Port = code7seg[donvi];
+  46   1         LED_donvi = 0;
+  47   1         delay(1);
+  48   1         LED_donvi = 1;
+  49   1      
+  50   1         LED_Port = code7seg[chuc];
+  51   1         LED_chuc = 0;
+  52   1         delay(1);
+  53   1         LED_chuc = 0;
+  54   1       }
+  55           void main()
+C51 COMPILER V9.01   MA_TRAN                                                               09/01/2018 23:50:38 PAGE 2   
+
+  56           {              
+  57   1         unsigned char tmp;   
+  58   1         while(1)
+  59   1         {
+  60   2            if(KeyPress()!=0) tmp = KeyPress();
+  61   2                Time_on(tmp);
+  62   2         }
+  63   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    170    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

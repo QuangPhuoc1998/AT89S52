@@ -1,0 +1,14 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\file Keil C\AT89S52\step_L298\step_L298.uvproj
+Project File Date:  02/25/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+linking...
+Program Size: data=15.0 xdata=0 code=221
+creating hex file from "step_L298"...
+"step_L298" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,109 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\file Keil C\AT89S52\Timer\Timer.uvproj
+Project File Date:  10/20/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Timer.c...
+linking...
+Program Size: data=9.0 xdata=0 code=56
+creating hex file from "Timer"...
+"Timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C202: 'M0': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C202: 'M0': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C202: 'TO_M0_': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C202: 'TO_M0_': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+linking...
+Program Size: data=9.0 xdata=0 code=56
+creating hex file from "Timer"...
+"Timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C202: 'T0_M0': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C202: 'true': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): error C202: 'true': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(3): error C143: invalid absolute bit address
+TIMER.C(20): error C202: 'true': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Timer.c...
+TIMER.C(19): warning C275: expression with possibly no effect
+linking...
+Program Size: data=9.0 xdata=0 code=53
+creating hex file from "Timer"...
+"Timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=53
+creating hex file from "Timer"...
+"Timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Timer.c...
+linking...
+Program Size: data=9.0 xdata=0 code=56
+creating hex file from "Timer"...
+"Timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=56
+creating hex file from "Timer"...
+"Timer" - 0 Error(s), 0 Warning(s).

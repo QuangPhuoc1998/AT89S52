@@ -1,0 +1,169 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/26/2018  10:08:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE code led quay.obj, .\delay.obj TO led_quay RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  code led quay.obj (CODE_LED_QUAY)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  led_quay (CODE_LED_QUAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?CODE_LED_QUAY
+                    000EH     0002H                  *** GAP ***
+            REG     0010H     0008H     ABSOLUTE     "REG BANK 2"
+            IDATA   0018H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     0005H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    009AH     0078H     UNIT         ?CO?CODE_LED_QUAY
+            CODE    0112H     006AH     UNIT         ?PR?ISR0?CODE_LED_QUAY
+            CODE    017CH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    019CH     0018H     UNIT         ?PR?MAIN?CODE_LED_QUAY
+            CODE    01B4H     0009H     UNIT         ?PR?NGAT_TIMER0?CODE_LED_QUAY
+            CODE    01BDH     0008H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   led_quay (CODE_LED_QUAY)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?ISR0?CODE_LED_QUAY
+  +--> ?CO?CODE_LED_QUAY
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?CODE_LED_QUAY
+  +--> ?C_INITSEG
+
+?PR?MAIN?CODE_LED_QUAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/26/2018  10:08:54  PAGE 2
+
+
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  led_quay (CODE_LED_QUAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CODE_LED_QUAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  B:00A8H.7       PUBLIC        EA
+  B:0080H.1       PUBLIC        P0_1
+  C:0112H         PUBLIC        ISR0
+  C:019CH         PUBLIC        main
+  D:0008H         PUBLIC        buoc
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  B:00A8H.0       PUBLIC        EX0
+  D:008AH         PUBLIC        TL0
+  C:009AH         PUBLIC        mang1
+  B:0088H.4       PUBLIC        TR0
+  C:01B4H         PUBLIC        ngat_timer0
+  D:0009H         PUBLIC        i
+  D:000BH         PUBLIC        j
+  D:000CH         PUBLIC        k
+  -------         PROC          NGAT_TIMER0
+  C:01B4H         LINE#         29
+  C:01B4H         LINE#         31
+  C:01B6H         LINE#         32
+  C:01B9H         LINE#         33
+  C:01BCH         LINE#         34
+  -------         ENDPROC       NGAT_TIMER0
+  -------         PROC          ISR0
+  C:0112H         LINE#         35
+  C:011DH         LINE#         37
+  C:0120H         LINE#         38
+  C:0123H         LINE#         39
+  C:0125H         LINE#         40
+  C:0127H         LINE#         41
+  C:012BH         LINE#         42
+  C:012BH         LINE#         44
+  C:012BH         LINE#         46
+  C:0131H         LINE#         47
+  C:0131H         LINE#         48
+  C:0134H         LINE#         49
+  C:013BH         LINE#         50
+  C:013BH         LINE#         51
+  C:0144H         LINE#         52
+  C:0146H         LINE#         54
+  C:0154H         LINE#         56
+  C:015CH         LINE#         57
+  C:0162H         LINE#         58
+  C:0162H         LINE#         59
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/26/2018  10:08:54  PAGE 3
+
+
+  C:0166H         LINE#         60
+  C:0168H         LINE#         61
+  C:0168H         LINE#         62
+  C:016AH         LINE#         65
+  C:016AH         LINE#         66
+  C:016DH         LINE#         67
+  C:0173H         LINE#         68
+  C:0173H         LINE#         69
+  C:0173H         LINE#         70
+  -------         ENDPROC       ISR0
+  -------         PROC          MAIN
+  C:019CH         LINE#         72
+  C:019CH         LINE#         73
+  C:019CH         LINE#         74
+  C:019FH         LINE#         75
+  C:01A2H         LINE#         76
+  C:01A5H         LINE#         77
+  C:01A7H         LINE#         78
+  C:01A9H         LINE#         79
+  C:01ABH         LINE#         80
+  C:01ABH         LINE#         81
+  C:01ABH         LINE#         82
+  C:01B2H         LINE#         83
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        CODE_LED_QUAY
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:017CH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:017CH         LINE#         2
+  C:017CH         LINE#         3
+  C:017CH         LINE#         5
+  C:0186H         LINE#         6
+  C:019BH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=23.0 xdata=0 code=448
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

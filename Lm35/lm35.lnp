@@ -1,0 +1,6 @@
+"delay.obj",
+"LCD4.obj",
+"lm35.obj" 
+TO "lm35" 
+
+ru 

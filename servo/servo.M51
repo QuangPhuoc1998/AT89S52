@@ -1,0 +1,227 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/11/2018  10:49:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE delay.obj, servo.obj TO servo RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  delay.obj (DELAY)
+  servo.obj (SERVO)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?ULDIV)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?SLSHR)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?LIMUL)
+
+
+LINK MAP OF MODULE:  servo (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?SERVO
+            DATA    0012H     0002H     UNIT         _DATA_GROUP_
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     UNIT         ?PR?PWM_START?SERVO
+            CODE    0006H     0003H     UNIT         ?PR?PWM_STOP?SERVO
+                    0009H     0002H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     010FH     UNIT         ?C?LIB_CODE
+            CODE    011DH     007CH     UNIT         ?PR?_PWM_SET_DUTY?SERVO
+            CODE    0199H     0036H     UNIT         ?PR?MAIN?SERVO
+            CODE    01CFH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    01EFH     0013H     UNIT         ?PR?TIMER0OVERLOW?SERVO
+            CODE    0202H     0011H     UNIT         ?PR?_PWM_INIT?SERVO
+            CODE    0213H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   servo (DELAY)
+
+
+SEGMENT                           DATA_GROUP 
+  +--> CALLED SEGMENT           START    LENGTH
+-----------------------------------------------
+?C_C51STARTUP                   -----    -----
+  +--> ?PR?MAIN?SERVO
+
+?PR?MAIN?SERVO                  0012H    0002H
+  +--> ?PR?_PWM_INIT?SERVO
+  +--> ?PR?PWM_START?SERVO
+  +--> ?PR?_DELAY?DELAY
+  +--> ?PR?_PWM_SET_DUTY?SERVO
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/11/2018  10:49:31  PAGE 2
+
+
+
+
+
+SYMBOL TABLE OF MODULE:  servo (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:01CFH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:01CFH         LINE#         2
+  C:01CFH         LINE#         3
+  C:01CFH         LINE#         5
+  C:01D9H         LINE#         6
+  C:01EEH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        SERVO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A0H.2       PUBLIC        BTN_DOWN
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  D:0008H         PUBLIC        Toff
+  C:0006H         PUBLIC        PWM_STOP
+  C:0199H         PUBLIC        main
+  D:000AH         PUBLIC        Ton
+  D:000CH         PUBLIC        Toff_h_reload
+  D:0089H         PUBLIC        TMOD
+  D:000DH         PUBLIC        Toff_l_reload
+  B:00A0H.0       PUBLIC        PWM_PIN
+  C:01EFH         PUBLIC        timer0Overlow
+  B:00A8H.1       PUBLIC        ET0
+  C:011DH         PUBLIC        _PWM_set_duty
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  D:000EH         PUBLIC        T
+  D:0010H         PUBLIC        Ton_h_reload
+  B:0088H.4       PUBLIC        TR0
+  D:0011H         PUBLIC        Ton_l_reload
+  C:0003H         PUBLIC        PWM_START
+  B:00A0H.1       PUBLIC        BTN_UP
+  C:0202H         PUBLIC        _PWM_Init
+  -------         PROC          _PWM_INIT
+  D:0006H         SYMBOL        ck
+  C:0202H         LINE#         7
+  C:0202H         LINE#         8
+  C:0202H         LINE#         9
+  C:0204H         LINE#         11
+  C:0207H         LINE#         12
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/11/2018  10:49:31  PAGE 3
+
+
+  C:020AH         LINE#         14
+  C:020CH         LINE#         15
+  C:020EH         LINE#         17
+  C:0212H         LINE#         18
+  -------         ENDPROC       _PWM_INIT
+  -------         PROC          PWM_START
+  C:0003H         LINE#         19
+  C:0003H         LINE#         20
+  C:0003H         LINE#         21
+  C:0005H         LINE#         22
+  -------         ENDPROC       PWM_START
+  -------         PROC          PWM_STOP
+  C:0006H         LINE#         23
+  C:0006H         LINE#         24
+  C:0006H         LINE#         25
+  C:0008H         LINE#         26
+  -------         ENDPROC       PWM_STOP
+  -------         PROC          _PWM_SET_DUTY
+  D:0007H         SYMBOL        duty
+  C:011DH         LINE#         27
+  C:011DH         LINE#         28
+  C:011DH         LINE#         29
+  C:0120H         LINE#         30
+  C:0120H         LINE#         31
+  C:0122H         LINE#         32
+  C:0124H         LINE#         33
+  C:0125H         LINE#         35
+  C:0128H         LINE#         36
+  C:0128H         LINE#         37
+  C:012AH         LINE#         38
+  C:012CH         LINE#         39
+  C:012DH         LINE#         41
+  C:012DH         LINE#         42
+  C:0143H         LINE#         43
+  C:0150H         LINE#         45
+  C:016BH         LINE#         46
+  C:0172H         LINE#         48
+  C:0190H         LINE#         49
+  C:0196H         LINE#         51
+  C:0198H         LINE#         52
+  C:0198H         LINE#         53
+  -------         ENDPROC       _PWM_SET_DUTY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0012H         SYMBOL        duty
+  -------         ENDDO         
+  C:0199H         LINE#         54
+  C:0199H         LINE#         55
+  C:0199H         LINE#         57
+  C:019FH         LINE#         58
+  C:01A6H         LINE#         59
+  C:01A9H         LINE#         60
+  C:01A9H         LINE#         61
+  C:01A9H         LINE#         62
+  C:01B0H         LINE#         63
+  C:01B5H         LINE#         64
+  C:01B8H         LINE#         65
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/11/2018  10:49:31  PAGE 4
+
+
+  C:01B8H         LINE#         66
+  C:01BBH         LINE#         67
+  C:01C1H         LINE#         68
+  C:01C1H         LINE#         69
+  C:01C4H         LINE#         70
+  C:01C4H         LINE#         71
+  C:01C7H         LINE#         72
+  C:01CDH         LINE#         73
+  C:01CDH         LINE#         75
+  -------         ENDPROC       MAIN
+  -------         PROC          TIMER0OVERLOW
+  C:01EFH         LINE#         77
+  C:01EFH         LINE#         79
+  C:01F1H         LINE#         80
+  C:01F4H         LINE#         81
+  C:01F4H         LINE#         82
+  C:01F7H         LINE#         83
+  C:01FAH         LINE#         84
+  C:01FBH         LINE#         86
+  C:01FBH         LINE#         87
+  C:01FEH         LINE#         88
+  C:0201H         LINE#         89
+  C:0201H         LINE#         90
+  -------         ENDPROC       TIMER0OVERLOW
+  -------         ENDMOD        SERVO
+
+  -------         MODULE        ?C?ULDIV
+  C:004AH         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+  -------         MODULE        ?C?SLSHR
+  C:00DCH         PUBLIC        ?C?SLSHR
+  -------         ENDMOD        ?C?SLSHR
+
+  -------         MODULE        ?C?LIMUL
+  C:00F0H         PUBLIC        ?C?LIMUL
+  -------         ENDMOD        ?C?LIMUL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PWM_STOP?SERVO
+
+Program Size: data=21.0 xdata=0 code=541
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

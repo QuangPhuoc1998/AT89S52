@@ -1,0 +1,97 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/25/2018  22:16:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE DAC.obj, .\delay.obj TO DAC RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  DAC.obj (DAC)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  DAC (DAC)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?MAIN?DAC
+            CODE    0023H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0043H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   DAC (DAC)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DAC
+
+?PR?MAIN?DAC
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  DAC (DAC)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DAC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/25/2018  22:16:29  PAGE 2
+
+
+  C:0006H         LINE#         7
+  C:0006H         LINE#         8
+  C:0006H         LINE#         10
+  C:0006H         LINE#         11
+  C:0008H         LINE#         12
+  C:000FH         LINE#         13
+  C:0014H         LINE#         15
+  C:0014H         LINE#         16
+  C:0016H         LINE#         17
+  C:001DH         LINE#         18
+  C:0021H         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DAC
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0023H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0023H         LINE#         2
+  C:0023H         LINE#         3
+  C:0023H         LINE#         5
+  C:002DH         LINE#         6
+  C:0042H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=9.0 xdata=0 code=79
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

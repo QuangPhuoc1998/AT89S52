@@ -1,0 +1,4 @@
+"delay.obj",
+"step_L298.obj" 
+TO "step_L298" 
+RAMSIZE(256) 

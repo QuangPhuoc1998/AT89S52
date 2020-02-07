@@ -1,0 +1,4 @@
+"UART_74HC165.obj",
+".\delay.obj" 
+TO "UART_74HC165" 
+RAMSIZE(256) 

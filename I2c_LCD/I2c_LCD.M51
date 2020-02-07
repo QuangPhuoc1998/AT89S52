@@ -1,0 +1,129 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/02/2018  01:39:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE I2c_LCD.obj, .\delay.obj TO I2c_LCD RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  I2c_LCD.obj (I2C_LCD)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  I2c_LCD (I2C_LCD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0023H     0017H     UNIT         ?PR?_I2C_WRITE?I2C_LCD
+            CODE    003AH     0011H     UNIT         ?PR?MAIN?I2C_LCD
+            CODE    004BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0057H     0009H     UNIT         ?PR?I2C_TIME_START?I2C_LCD
+
+
+
+OVERLAY MAP OF MODULE:   I2c_LCD (I2C_LCD)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?I2C_LCD
+
+?PR?MAIN?I2C_LCD
+  +--> ?PR?I2C_TIME_START?I2C_LCD
+  +--> ?PR?_DELAY?DELAY
+  +--> ?PR?_I2C_WRITE?I2C_LCD
+
+
+
+SYMBOL TABLE OF MODULE:  I2c_LCD (I2C_LCD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        I2C_LCD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:003AH         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/02/2018  01:39:09  PAGE 2
+
+
+  C:0023H         PUBLIC        _I2C_write
+  B:0080H.1       PUBLIC        SDA
+  C:0057H         PUBLIC        I2C_time_start
+  B:0080H.0       PUBLIC        SCL
+  -------         PROC          I2C_TIME_START
+  C:0057H         LINE#         4
+  C:0057H         LINE#         5
+  C:0057H         LINE#         6
+  C:0059H         LINE#         7
+  C:005BH         LINE#         8
+  C:005DH         LINE#         9
+  C:005FH         LINE#         10
+  -------         ENDPROC       I2C_TIME_START
+  -------         PROC          _I2C_WRITE
+  D:0007H         SYMBOL        dat
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0023H         LINE#         11
+  C:0023H         LINE#         12
+  C:0023H         LINE#         14
+  C:0025H         LINE#         15
+  C:0025H         LINE#         16
+  C:0029H         LINE#         17
+  C:002BH         LINE#         18
+  C:002DH         LINE#         19
+  C:0031H         LINE#         20
+  C:0035H         LINE#         21
+  C:0037H         LINE#         22
+  C:0039H         LINE#         23
+  -------         ENDPROC       _I2C_WRITE
+  -------         PROC          MAIN
+  C:003AH         LINE#         24
+  C:003AH         LINE#         25
+  C:003AH         LINE#         26
+  C:003DH         LINE#         27
+  C:003DH         LINE#         28
+  C:003DH         LINE#         29
+  C:0044H         LINE#         30
+  C:0049H         LINE#         31
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        I2C_LCD
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         5
+  C:000DH         LINE#         6
+  C:0022H         LINE#         7
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/02/2018  01:39:09  PAGE 3
+
+
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=9.0 xdata=0 code=96
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

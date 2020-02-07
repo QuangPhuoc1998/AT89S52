@@ -1,0 +1,4 @@
+"Bai_tap.obj",
+".\delay.obj" 
+TO "Bai_tap" 
+RAMSIZE(256) 

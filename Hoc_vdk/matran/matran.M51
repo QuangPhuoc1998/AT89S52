@@ -1,0 +1,168 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/16/2018  19:19:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE matran.obj, .\delay.obj TO matran RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  matran.obj (MATRAN)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  matran (MATRAN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?MATRAN
+            DATA    000CH     0002H     UNIT         _DATA_GROUP_
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0055H     UNIT         ?C?LIB_CODE
+            CODE    0058H     0045H     UNIT         ?PR?_TIME_ON?MATRAN
+            CODE    009DH     003BH     UNIT         ?PR?PRESSKEY?MATRAN
+            CODE    00D8H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    00F8H     0017H     UNIT         ?PR?MAIN?MATRAN
+            CODE    010FH     000CH     UNIT         ?C_C51STARTUP
+            CODE    011BH     000AH     UNIT         ?CO?MATRAN
+
+
+
+OVERLAY MAP OF MODULE:   matran (MATRAN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MATRAN
+
+?PR?MAIN?MATRAN                000CH    0002H
+  +--> ?PR?PRESSKEY?MATRAN
+  +--> ?PR?_TIME_ON?MATRAN
+
+?PR?_TIME_ON?MATRAN            -----    -----
+  +--> ?CO?MATRAN
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  matran (MATRAN)
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/16/2018  19:19:21  PAGE 2
+
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MATRAN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.1       PUBLIC        c1
+  B:00A0H.2       PUBLIC        c2
+  C:011BH         PUBLIC        code7seg
+  B:00A0H.3       PUBLIC        c3
+  B:00A0H.4       PUBLIC        h1
+  B:00A0H.5       PUBLIC        h2
+  B:00A0H.6       PUBLIC        h3
+  D:0008H         PUBLIC        donvi
+  D:000AH         PUBLIC        chuc
+  C:00F8H         PUBLIC        main
+  B:00B0H.4       PUBLIC        leddonvi
+  C:009DH         PUBLIC        Presskey
+  B:00B0H.5       PUBLIC        ledchuc
+  C:0058H         PUBLIC        _time_on
+  -------         PROC          PRESSKEY
+  -------         DO            
+  D:0007H         SYMBOL        key
+  -------         ENDDO         
+  C:009DH         LINE#         6
+  C:009DH         LINE#         7
+  C:009DH         LINE#         8
+  C:009FH         LINE#         9
+  C:00A1H         LINE#         10
+  C:00A5H         LINE#         11
+  C:00AAH         LINE#         12
+  C:00AFH         LINE#         13
+  C:00B1H         LINE#         15
+  C:00B3H         LINE#         16
+  C:00B8H         LINE#         17
+  C:00BDH         LINE#         18
+  C:00C2H         LINE#         19
+  C:00C4H         LINE#         21
+  C:00C6H         LINE#         22
+  C:00CBH         LINE#         23
+  C:00D0H         LINE#         24
+  C:00D5H         LINE#         25
+  C:00D7H         LINE#         27
+  C:00D7H         LINE#         28
+  -------         ENDPROC       PRESSKEY
+  -------         PROC          _TIME_ON
+  D:0002H         SYMBOL        dem
+  C:0058H         LINE#         29
+  C:005CH         LINE#         30
+  C:005CH         LINE#         31
+  C:0067H         LINE#         32
+  C:0076H         LINE#         34
+  C:007EH         LINE#         35
+  C:0080H         LINE#         36
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/16/2018  19:19:21  PAGE 3
+
+
+  C:0087H         LINE#         37
+  C:0089H         LINE#         39
+  C:0091H         LINE#         40
+  C:0093H         LINE#         41
+  C:009AH         LINE#         42
+  C:009CH         LINE#         43
+  -------         ENDPROC       _TIME_ON
+  -------         PROC          MAIN
+  -------         DO            
+  D:000CH         SYMBOL        dem
+  -------         ENDDO         
+  C:00F8H         LINE#         44
+  C:00F8H         LINE#         45
+  C:00F8H         LINE#         47
+  C:00F8H         LINE#         48
+  C:00F8H         LINE#         49
+  C:0106H         LINE#         50
+  C:010DH         LINE#         51
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MATRAN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00D8H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:00D8H         LINE#         2
+  C:00D8H         LINE#         3
+  C:00D8H         LINE#         5
+  C:00E2H         LINE#         6
+  C:00F7H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        ?C?UIDIV
+  C:0003H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=15.0 xdata=0 code=293
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

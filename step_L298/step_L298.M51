@@ -1,0 +1,101 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/26/2019  20:31:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE delay.obj, step_L298.obj TO step_L298 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  delay.obj (DELAY)
+  step_L298.obj (STEP_L298)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  step_L298 (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?STEP_L298
+            DATA    000CH     0002H     UNIT         _DATA_GROUP_
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0027H     UNIT         ?PR?MAIN?STEP_L298
+            CODE    00B6H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    00D6H     0007H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   step_L298 (DELAY)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?STEP_L298
+  +--> ?C_INITSEG
+
+?PR?MAIN?STEP_L298             000CH    0002H
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  step_L298 (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00B6H         PUBLIC        _delay
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/26/2019  20:31:22  PAGE 2
+
+
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:00B6H         LINE#         2
+  C:00B6H         LINE#         3
+  C:00B6H         LINE#         5
+  C:00C0H         LINE#         6
+  C:00D5H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        STEP_L298
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:008FH         PUBLIC        main
+  D:0008H         PUBLIC        full_drive
+  -------         PROC          MAIN
+  -------         DO            
+  D:000CH         SYMBOL        i
+  -------         ENDDO         
+  C:008FH         LINE#         5
+  C:008FH         LINE#         6
+  C:008FH         LINE#         8
+  C:008FH         LINE#         9
+  C:008FH         LINE#         10
+  C:0094H         LINE#         11
+  C:0094H         LINE#         12
+  C:009CH         LINE#         13
+  C:00A3H         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        STEP_L298
+
+Program Size: data=15.0 xdata=0 code=221
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

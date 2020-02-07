@@ -1,0 +1,119 @@
+C51 COMPILER V9.01   SERVO                                                                 02/11/2019 11:57:12 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SERVO
+OBJECT MODULE PLACED IN servo.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE servo.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1           #include <main.h>
+   2           #include "delay.h"
+   3           
+   4           unsigned int T, Ton, Toff;
+   5           unsigned char Ton_h_reload, Ton_l_reload, Toff_h_reload, Toff_l_reload;
+   6          
+   7           void PWM_Init(unsigned int ck)
+   8           {
+   9   1         PWM_PIN = 1;
+  10   1      
+  11   1         TMOD &= 0xF0;
+  12   1         TMOD |= 0x01;
+  13   1      
+  14   1         ET0 = 1;
+  15   1         EA = 1;
+  16   1      
+  17   1         T = ck;
+  18   1       } 
+  19           void PWM_START()
+  20           {
+  21   1         TR0 = 1;
+  22   1       }
+  23           void PWM_STOP()
+  24           {
+  25   1         TR0 = 0;
+  26   1       }
+  27           void PWM_set_duty(unsigned char duty )
+  28           {
+  29   1         if(duty==0)
+  30   1         {
+  31   2           PWM_PIN = 0;
+  32   2               ET0 = 0;
+  33   2         }
+  34   1         else 
+  35   1         if (duty == 100)
+  36   1         {
+  37   2           PWM_PIN = 1;
+  38   2               ET0 = 0;
+  39   2         }
+  40   1         else
+  41   1         {
+  42   2         Ton = (unsigned long)T*duty/100;
+  43   2         Toff = T-Ton;
+  44   2      
+  45   2         Ton_h_reload = (65536-Ton)>>8;
+  46   2         Ton_l_reload = (65536-Ton)&0x00FF;
+  47   2      
+  48   2         Toff_h_reload = (65536-Toff)>>8;
+  49   2         Toff_l_reload = (65536-Toff)&0x00FF;
+  50   2      
+  51   2         ET0 = 1;
+  52   2         }
+  53   1       }
+  54           void main()
+  55           {
+C51 COMPILER V9.01   SERVO                                                                 02/11/2019 11:57:12 PAGE 2   
+
+  56   1         int duty = 5;
+  57   1         PWM_Init(20000);
+  58   1         PWM_START();
+  59   1         PWM_set_duty(duty);
+  60   1         while(1)
+  61   1         {
+  62   2           if(BTN_UP==0)
+  63   2               { 
+  64   3                 while(BTN_UP==0);
+  65   3                 delay(20);
+  66   3                 if(duty==10); else duty+=1;
+  67   3               }
+  68   2               if(BTN_DOWN==0)
+  69   2               { 
+  70   3                 while(BTN_DOWN==0);
+  71   3                 delay(5);
+  72   3                 if(duty==5); else duty-=1;
+  73   3               }
+  74   2               PWM_set_duty(duty);      
+  75   2         }
+  76   1       }
+  77           void timer0Overlow() interrupt 1
+  78           {
+  79   1         PWM_PIN = !PWM_PIN;
+  80   1         if(PWM_PIN==0)
+  81   1         {
+  82   2           TH0 = Toff_h_reload;
+  83   2           TL0 = Toff_l_reload;
+  84   2         }
+  85   1         else
+  86   1         {
+  87   2           TH0 = Ton_h_reload;
+  88   2           TL0 = Ton_l_reload;
+  89   2         }
+  90   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    255    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+"den_do.obj",
+".\delay.obj" 
+TO "den_do" 
+RAMSIZE(256) 

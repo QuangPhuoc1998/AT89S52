@@ -1,0 +1,50 @@
+C51 COMPILER V9.01   TIMER                                                                 02/12/2019 23:50:05 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN Timer.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE Timer.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1             #include <main.h>
+   2          //   #include "..\library\delay.h"
+   3             void delay_timer(unsigned int t)
+   4           {
+   5   1      //   TMOD = 0x01;
+   6   1         do
+   7   1         {
+   8   2           TL0 = 0x18;
+   9   2               TH0 = 0xFC;
+  10   2               TR0 = 1;
+  11   2               while(!TF0);
+  12   2               TF0 = 0;
+  13   2               TR0 = 0;
+  14   2               t--;
+  15   2         }  while(t!=0);
+  16   1       }
+  17             void main()
+  18             { 
+  19   1             TMOD=(1<<T0_M0_); // timer 0 che do 1
+  20   1             P3_0 = 0;
+  21   1                 while(1)
+  22   1                 { 
+  23   2                   P3_0 = !P3_0;
+  24   2                       delay_timer(1000);
+  25   2      
+  26   2                 }
+  27   1         }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     41    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

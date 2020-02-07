@@ -1,0 +1,132 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/28/2018  10:24:30  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE delay.obj, SPI_vdk1.obj TO SPI_vdk1 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  delay.obj (DELAY)
+  SPI_vdk1.obj (SPI_VDK1)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  SPI_vdk1 (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0023H     0017H     UNIT         ?PR?_SOFT_SPI_WRITE?SPI_VDK1
+            CODE    003AH     0011H     UNIT         ?PR?MAIN?SPI_VDK1
+            CODE    004BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0057H     0007H     UNIT         ?PR?SOFT_SPI_INIT?SPI_VDK1
+
+
+
+OVERLAY MAP OF MODULE:   SPI_vdk1 (DELAY)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?SPI_VDK1
+
+?PR?MAIN?SPI_VDK1                    -----    -----
+  +--> ?PR?SOFT_SPI_INIT?SPI_VDK1
+  +--> ?PR?_SOFT_SPI_WRITE?SPI_VDK1
+  +--> ?PR?_DELAY?DELAY
+
+?PR?_SOFT_SPI_WRITE?SPI_VDK1         0008H    0001H
+
+
+
+SYMBOL TABLE OF MODULE:  SPI_vdk1 (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/28/2018  10:24:30  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         5
+  C:000DH         LINE#         6
+  C:0022H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        SPI_VDK1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  B:00A0H.2       PUBLIC        SPI_MISO
+  B:00A0H.1       PUBLIC        SPI_MOSI
+  C:003AH         PUBLIC        main
+  B:00A0H.0       PUBLIC        SPI_CLK
+  C:0057H         PUBLIC        Soft_SPI_Init
+  B:00A0H.3       PUBLIC        SPI_CS
+  C:0023H         PUBLIC        _Soft_SPI_write
+  -------         PROC          SOFT_SPI_INIT
+  C:0057H         LINE#         4
+  C:0057H         LINE#         5
+  C:0057H         LINE#         6
+  C:0059H         LINE#         7
+  C:005BH         LINE#         8
+  C:005DH         LINE#         9
+  -------         ENDPROC       SOFT_SPI_INIT
+  -------         PROC          _SOFT_SPI_WRITE
+  D:0008H         SYMBOL        b
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0023H         LINE#         10
+  C:0025H         LINE#         11
+  C:0025H         LINE#         13
+  C:0028H         LINE#         14
+  C:0028H         LINE#         15
+  C:0028H         LINE#         16
+  C:0028H         LINE#         18
+  C:002AH         LINE#         19
+  C:002CH         LINE#         20
+  C:002EH         LINE#         21
+  C:0039H         LINE#         22
+  -------         ENDPROC       _SOFT_SPI_WRITE
+  -------         PROC          MAIN
+  C:003AH         LINE#         23
+  C:003AH         LINE#         24
+  C:003AH         LINE#         25
+  C:003DH         LINE#         26
+  C:003DH         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/28/2018  10:24:30  PAGE 3
+
+
+  C:003DH         LINE#         28
+  C:0042H         LINE#         29
+  C:0049H         LINE#         30
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SPI_VDK1
+
+Program Size: data=10.0 xdata=0 code=94
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

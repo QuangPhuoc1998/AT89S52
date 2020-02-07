@@ -1,0 +1,4 @@
+"button.obj",
+".\delay.obj" 
+TO "button" 
+RAMSIZE(256) 

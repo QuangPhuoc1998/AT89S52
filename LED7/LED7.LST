@@ -1,0 +1,79 @@
+C51 COMPILER V9.01   LED7                                                                  12/28/2018 10:38:06 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LED7
+OBJECT MODULE PLACED IN LED7.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE LED7.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1            #include <main.h>
+   2            #include "E:\file Keil C\AT89S52\library\delay.h"
+   3          
+   4          
+   5            unsigned char code code7seg[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   6          
+   7            void main()
+   8            {
+   9   1          
+  10   1          unsigned char i;
+  11   1              while(1)
+  12   1              {
+  13   2                 // cho den do
+  14   2                 dendo = 0;
+  15   2                 denxanh = 1;
+  16   2                 denvang = 1;
+  17   2      
+  18   2                 for(i = 10; i > 0 ; i--)
+  19   2                 {
+  20   3                    LED1 = code7seg[i/10];
+  21   3                        LED2 = code7seg[i%10];
+  22   3                        delay(500);
+  23   3                 }
+  24   2      
+  25   2                 // cho den vang
+  26   2                 dendo = 1;
+  27   2                 denxanh = 1;
+  28   2                 denvang = 0;
+  29   2      
+  30   2                 for(i = 3; i > 0 ; i--)
+  31   2                 {
+  32   3                    LED1 = code7seg[i/10];
+  33   3                        LED2 = code7seg[i%10];
+  34   3                        delay(500);
+  35   3                 }
+  36   2      
+  37   2                 // cho den xanh
+  38   2                 dendo = 1;
+  39   2                 denxanh = 0;
+  40   2                 denvang = 1;
+  41   2      
+  42   2                 for(i = 7; i > 0 ; i--)
+  43   2                 {
+  44   3                    LED1 = code7seg[i/10];
+  45   3                        LED2 = code7seg[i%10];
+  46   3                        delay(500);
+  47   3                 }
+  48   2                 P3 = 00000001;
+  49   2      
+  50   2              }
+  51   1      
+  52   1              
+  53   1              
+  54   1        }
+
+C51 COMPILER V9.01   LED7                                                                  12/28/2018 10:38:06 PAGE 2   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    150    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

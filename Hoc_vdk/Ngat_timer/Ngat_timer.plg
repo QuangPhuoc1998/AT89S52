@@ -1,0 +1,266 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\file Keil C\AT89S52\Hoc_vdk\Ngat_timer\Ngat_timer.uvproj
+Project File Date:  09/26/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Ngat_timer.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1AMC-9HRGLC
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 
+ru
+CODE( 0X0000-0X1FFF )
+*** FATAL ERROR L204: INVALID KEYWORD
+    POS: 68
+    N\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) RU #
+Target not created
+Build target 'Target 1'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1AMC-9HRGLC
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 
+ru
+CODE( 0X0000-0X1FFF )
+*** FATAL ERROR L204: INVALID KEYWORD
+    POS: 68
+    N\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) RU #
+Target not created
+Build target 'Target 1'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1AMC-9HRGLC
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 
+ru
+CODE( 0X0000-0X1FFF )
+*** FATAL ERROR L204: INVALID KEYWORD
+    POS: 68
+    N\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) RU #
+Target not created
+Build target 'Target 1'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1AMC-9HRGLC
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 
+ru
+CODE( 0X0000-0X1FFF )
+*** FATAL ERROR L204: INVALID KEYWORD
+    POS: 68
+    N\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) RU #
+Target not created
+Build target 'Target 1'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1AMC-9HRGLC
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 
+ru
+CODE( 0X0000-0X1FFF )
+*** FATAL ERROR L204: INVALID KEYWORD
+    POS: 68
+    N\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) RU #
+Target not created
+Build target 'Target 1'
+compiling Ngat_timer.c...
+compiling delay.c...
+..\..\library\delay.c(1): warning C318: can't open file 'delay.h'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Ngat_timer.c...
+compiling delay.c...
+..\..\library\delay.c(1): warning C318: can't open file 'delay.h'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1AMC-9HRGLC
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 
+ru
+CODE( 0X0000-0X1FFF )
+*** FATAL ERROR L204: INVALID KEYWORD
+    POS: 68
+    N\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) RU #
+Target not created
+Build target 'Target 1'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1AMC-9HRGLC
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"Ngat_timer.obj",
+".\delay.obj" 
+TO "Ngat_timer" 
+RAMSIZE(256) 
+ru
+CODE( 0X0000-0X1FFF )
+*** FATAL ERROR L204: INVALID KEYWORD
+    POS: 68
+    N\BL51.EXE Ngat_timer.obj, .\delay.obj TO Ngat_timer RAMSIZE (256) RU #
+Target not created
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+Program Size: data=11.0 xdata=0 code=236
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling Ngat_timer.c...
+compiling delay.c...
+..\..\library\delay.c(1): warning C318: can't open file 'delay.h'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Ngat_timer.c...
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=204
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Ngat_timer.c...
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=198
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 const=0 code=198
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Ngat_timer.c...
+NGAT_TIMER.C(16): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Ngat_timer.c...
+NGAT_TIMER.C(16): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Ngat_timer.c...
+linking...
+Program Size: data=13.0 xdata=0 const=0 code=277
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=13.0 xdata=0 const=0 code=277
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Ngat_timer.c...
+linking...
+Program Size: data=13.0 xdata=0 const=0 code=277
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Ngat_timer.c...
+linking...
+Program Size: data=13.0 xdata=0 const=0 code=277
+creating hex file from "Ngat_timer"...
+"Ngat_timer" - 0 Error(s), 0 Warning(s).

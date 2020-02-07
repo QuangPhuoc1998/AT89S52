@@ -1,0 +1,63 @@
+C51 COMPILER V9.01   L298                                                                  10/30/2018 22:26:04 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE L298
+OBJECT MODULE PLACED IN L298.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE L298.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           #include <main.h>
+   2           #include "..\..\library\delay.h"
+   3          
+   4           void thuan();
+   5           void nghich();
+   6           void main()
+   7           {
+   8   1         if(STA==0)
+   9   1         {
+  10   2           while(STA==0);
+  11   2               delay(1);
+  12   2               while(1)
+  13   2               {
+  14   3                 if(THUAN==0) thuan();
+  15   3                 if(NGHICH==0) nghich();
+  16   3                 if(STO==0) 
+  17   3                 {
+  18   4                   P2_0 = P2_1 = 0;
+  19   4                       Led_thuan = Led_nghich = 1;
+  20   4                       while(STO==0) Led_sto = 0;
+  21   4                       Led_sto = 1;
+  22   4                       break;
+  23   4                 }
+  24   3               }
+  25   2         }
+  26   1       }
+  27           void nghich()
+  28           {
+  29   1         P2_0 = 1;
+  30   1         Led_nghich = 0;
+  31   1         Led_thuan = 1;
+  32   1         P2_1 = !P2_0;
+  33   1       }
+  34           void thuan()
+  35           {
+  36   1         P2_0 = 0;
+  37   1         Led_nghich = 1;
+  38   1         Led_thuan = 0;
+  39   1         P2_1 = !P2_0;
+  40   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     70    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

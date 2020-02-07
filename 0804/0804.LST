@@ -1,0 +1,61 @@
+C51 COMPILER V9.01   0804                                                                  01/14/2019 21:24:09 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE 0804
+OBJECT MODULE PLACED IN 0804.OBJ
+COMPILER INVOKED BY: D:\Keil C\C51\BIN\C51.EXE 0804.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1          #include<AT89x51.h>
+   2          void delay(int k);    
+   3          void main()
+   4          {  while(1)
+   5   1       { 
+   6   2      if(P3_5==0)  
+   7   2      { P2=0xFF;  
+   8   3      delay(500); 
+   9   3      P3_0=0; 
+  10   3      P3_1=1; 
+  11   3      P3_2=1;} 
+  12   2      if(P3_6==0) 
+  13   2      { P2_0=0;
+  14   3       delay(500);  
+  15   3       P2_1=1; 
+  16   3      P3_0=1;
+  17   3       P3_1=0;
+  18   3       }
+  19   2      if(P3_7==0) 
+  20   2      { 
+  21   3      P2_0=1;
+  22   3       delay(500); 
+  23   3      P2_1=0;
+  24   3       P3_0=1;
+  25   3       P3_1=1;
+  26   3       P3_2=0; 
+  27   3      } }}  
+  28          void delay(int k) 
+  29          {  int i,j;  
+  30   1      for(i=0;i<k;i++)
+  31   1      { 
+  32   2      for(j=0;j<100;j++);   
+  33   2      } 
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     89    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

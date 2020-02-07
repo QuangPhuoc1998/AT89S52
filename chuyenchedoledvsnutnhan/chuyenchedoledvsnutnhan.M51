@@ -1,0 +1,152 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/22/2018  10:01:03  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE chuyenhieuungbangbutton.obj, .\delay.obj TO chuyenchedoledvsnutnhan RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  chuyenhieuungbangbutton.obj (CHUYENHIEUUNGBANGBUTTON)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  chuyenchedoledvsnutnhan (CHUYENHIEUUNGBANGBUTTON)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+                    000CH     0014H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?CHUYENHIEUUNGBANGBUTTON
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0073H     UNIT         ?PR?MAIN?CHUYENHIEUUNGBANGBUTTON
+            CODE    0102H     002DH     UNIT         ?PR?DELAYVAKIEMTRAPHIM?CHUYENHIEUUNGBANGBUTTON
+            CODE    012FH     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    014FH     0003H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   chuyenchedoledvsnutnhan (CHUYENHIEUUNGBANGBUTTON)
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?CHUYENHIEUUNGBANGBUTTON
+  +--> ?C_INITSEG
+
+?PR?MAIN?CHUYENHIEUUNGBANGBUTTON                 0008H    0002H
+  +--> ?PR?DELAYVAKIEMTRAPHIM?CHUYENHIEUUNGB...
+
+?PR?DELAYVAKIEMTRAPHIM?CHUYENHIEUUNGB...         000AH    0002H
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  chuyenchedoledvsnutnhan (CHUYENHIEUUNGBANGBUTTON)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/22/2018  10:01:03  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CHUYENHIEUUNGBANGBUTTON
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0102H         PUBLIC        delayvakiemtraphim
+  B:0020H.0       PUBLIC        pressedflag
+  C:008FH         PUBLIC        main
+  B:0090H.0       PUBLIC        BTN
+  -------         PROC          DELAYVAKIEMTRAPHIM
+  -------         DO            
+  D:000AH         SYMBOL        i
+  -------         ENDDO         
+  C:0102H         LINE#         9
+  C:0102H         LINE#         10
+  C:0102H         LINE#         12
+  C:0107H         LINE#         13
+  C:0107H         LINE#         14
+  C:010EH         LINE#         15
+  C:0111H         LINE#         16
+  C:0111H         LINE#         17
+  C:0114H         LINE#         18
+  C:0114H         LINE#         19
+  C:0116H         LINE#         20
+  C:0119H         LINE#         22
+  C:0119H         LINE#         23
+  C:0119H         LINE#         24
+  C:011BH         LINE#         25
+  C:011BH         LINE#         26
+  C:012CH         LINE#         27
+  C:012EH         LINE#         28
+  -------         ENDPROC       DELAYVAKIEMTRAPHIM
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:008FH         LINE#         29
+  C:008FH         LINE#         30
+  C:008FH         LINE#         31
+  C:008FH         LINE#         32
+  C:008FH         LINE#         34
+  C:0092H         LINE#         35
+  C:0095H         LINE#         36
+  C:009AH         LINE#         37
+  C:009AH         LINE#         38
+  C:00A0H         LINE#         39
+  C:00A3H         LINE#         40
+  C:00B4H         LINE#         42
+  C:00B7H         LINE#         43
+  C:00BAH         LINE#         44
+  C:00BFH         LINE#         45
+  C:00BFH         LINE#         46
+  C:00C5H         LINE#         47
+  C:00C8H         LINE#         49
+  C:00D9H         LINE#         50
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/22/2018  10:01:03  PAGE 3
+
+
+  C:00DCH         LINE#         51
+  C:00DFH         LINE#         52
+  C:00EFH         LINE#         53
+  C:00EFH         LINE#         54
+  C:00F5H         LINE#         55
+  C:00F8H         LINE#         57
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        CHUYENHIEUUNGBANGBUTTON
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:012FH         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:012FH         LINE#         2
+  C:012FH         LINE#         3
+  C:012FH         LINE#         5
+  C:0139H         LINE#         6
+  C:014EH         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=13.1 xdata=0 code=338
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

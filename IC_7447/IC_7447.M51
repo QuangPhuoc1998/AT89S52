@@ -1,0 +1,114 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/07/2018  00:15:10  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE IC_7447.obj, .\delay.obj TO IC_7447 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  IC_7447.obj (IC_7447)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  IC_7447 (IC_7447)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         _DATA_GROUP_
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0069H     UNIT         ?PR?MAIN?IC_7447
+            CODE    006CH     0055H     UNIT         ?C?LIB_CODE
+            CODE    00C1H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    00E1H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   IC_7447 (IC_7447)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?IC_7447
+
+?PR?MAIN?IC_7447               0008H    0006H
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  IC_7447 (IC_7447)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        IC_7447
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0003H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/07/2018  00:15:10  PAGE 2
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        dem
+  D:000AH         SYMBOL        tram
+  D:000BH         SYMBOL        chuc
+  D:000CH         SYMBOL        donvi
+  D:000DH         SYMBOL        tam
+  -------         ENDDO         
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0008H         LINE#         9
+  C:0008H         LINE#         10
+  C:0008H         LINE#         11
+  C:0015H         LINE#         12
+  C:002FH         LINE#         13
+  C:003CH         LINE#         14
+  C:0043H         LINE#         15
+  C:0047H         LINE#         16
+  C:004AH         LINE#         17
+  C:004DH         LINE#         18
+  C:0054H         LINE#         20
+  C:005CH         LINE#         21
+  C:006AH         LINE#         22
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        IC_7447
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00C1H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:00C1H         LINE#         2
+  C:00C1H         LINE#         3
+  C:00C1H         LINE#         5
+  C:00CBH         LINE#         6
+  C:00E0H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        ?C?UIDIV
+  C:006CH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=15.0 xdata=0 code=237
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
